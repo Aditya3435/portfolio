@@ -1,0 +1,9 @@
+.footer{
+    display: flex;
+    justify-content:flex-end;
+    font-size: 12px;
+    gap: 5rem;
+    a {
+        scale: 1.5;   
+    }
+}

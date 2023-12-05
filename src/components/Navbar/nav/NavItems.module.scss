@@ -1,0 +1,40 @@
+.menu{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    position: fixed;
+    right: 0;
+    top: 0;
+    color: white;
+    z-index: 1;
+    .body{
+        box-sizing: border-box;
+        height: 100%;
+        padding: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .nav{
+            display: flex;
+            flex-direction: column;
+            margin-top: 3rem;
+            font-size: 56px;
+            gap: 12px;
+
+            .header{
+                color: rgb(153, 153, 153);
+                border-bottom: 1px solid rgb(153, 153, 153);
+                text-transform: uppercase;
+                font-size: 11px;
+            }
+
+            a{
+                text-decoration: none;
+                color: white;
+                font-weight: 300;
+            }
+            
+        }
+    }
+}
