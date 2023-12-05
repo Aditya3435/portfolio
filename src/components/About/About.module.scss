@@ -1,0 +1,25 @@
+.aboutMain{
+    display: flex;
+    height: 70vh;
+    background-color: #000;
+    align-items: flex-end;
+    justify-content: center;
+    color: rgb(211, 211, 211);
+}
+
+.aboutBody{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.aboutBody p{
+    font-size: 2vw;
+    margin: 0px;
+    margin-right: 1.5vw;
+    font-weight: 700;
+}
+
+.aboutBody span{
+    opacity: 0.2;
+}
