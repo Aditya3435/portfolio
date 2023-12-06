@@ -112,12 +112,13 @@ export default function About() {
             </div>
             <div className='tech-stack-container flex flex-col gap-8 mt-20 '>
                 <div className=' text-7xl m-auto'>CP Profiles</div>
-                <div className={`scroller overflow-auto text-xl overflow-x-hidden ${isLightTheme ? "bg-gray-100" :"bg-slate-900"}`}>
+                <div className={`scroller overflow-auto flex items-center gap-4 text-xl overflow-x-hidden ${isLightTheme ? "bg-gray-100" : "bg-slate-900"}`}>
+                    <a href='https://anilist.co/user/aditya3435/' target='_blank'  title="anilist easter egg(please don't click :)" className={` absolute left-2 ${isLightTheme ? "text-white" : "text-black"}`}>Anilist</a>
                     {[1].map((el) => (
                         <section key={el}>
                             <div className="wrapper flex items-center gap-12 text-xl font-medium ">
                                 {[1, 2, 3].map((el2) => (
-                                    <a href={el2==1 ? "https://codeforces.com/profile/aditya3435/" : el2 == 2 ? "https://codechef.com/users/aditya3435" : "https://leetcode.com/aditya3435/"} key={el2} target='_blank'>
+                                    <a href={el2 == 1 ? "https://codeforces.com/profile/aditya3435/" : el2 == 2 ? "https://codechef.com/users/aditya3435" : "https://leetcode.com/aditya3435/"} key={el2} target='_blank'>
                                         <Image
                                             className="w-auto h-fit rounded-xl m-2 transition-all hover:scale-105 z-10"
                                             src={`/images/cp_profiles/${el2}.png`}
@@ -130,6 +131,7 @@ export default function About() {
                             </div>
                         </section>
                     ))}
+                    <a href='https://www.instagram.com/am_proton/' target='_blank' title="am_proton easter egg(please don't click)" className={`absolute right-2 ${isLightTheme ? "text-white" : "text-black"}`}>am_proton</a>
                 </div>
             </div>
         </div>
