@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useLayoutEffect } from 'react'
 import AOS from 'aos'; import 'aos/dist/aos.css';
 import { motion } from "framer-motion";
 import AnimatedText from "./AnimatedText";
@@ -7,6 +7,8 @@ import { useInView } from "framer-motion";
 import './Header.scss'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import InfiniteText from '../InfinteText/InfiniteText';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 function Header() {
     const typedTextRef = useRef(null)
@@ -62,6 +64,22 @@ function Header() {
         }
       };
       
+      useLayoutEffect( () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: document.documentElement,
+                scrub: true,
+                start: "top",
+                end: `+=${window.innerHeight}`,
+            },
+        })
+
+        timeline
+            .from(typedTextRef.current, {clipPath: `inset(15%)`})
+            .to(ref.current, {height: "300px"}, 0)
+    }, [])
     useEffect(() => {
         if (isInView) {
             type()
@@ -81,7 +99,7 @@ function Header() {
 
     return (
         <main className='bg-black h-screen flex flex-col gap-1 text-white' ref={ref}>
-            {isInView ? <div data-scroll data-scroll-speed="0.3" className='m-auto mt-40'>
+            {isInView ? <div className='m-auto mt-40'>
                 <motion.div
                     initial="hidden"
                     animate="visible"

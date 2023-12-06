@@ -9,8 +9,16 @@ import About from '@/components/About/About';
 gsap.registerPlugin(CSSPlugin);
 
 export default function Home() {
+	useEffect(() => {
+		(
+			async () => {
+				const LocomotiveScroll = (await import('locomotive-scroll')).default
+				const locomotiveScroll = new LocomotiveScroll();
+			}
+		)()
+	}, [])
 	const [counter, setCounter] = useState(0);
-	const [showHeader, setShowHeader] = useState(false);
+	const [showHeader, setShowHeader] = useState(false);// false
 	useEffect(() => {
 		const count = setInterval(() => {
 			setCounter((counter) =>
@@ -56,17 +64,9 @@ export default function Home() {
 			document.removeEventListener('mousemove', handleMouseMovement);
 		}
 	}, [x, y])
-	useEffect(() => {
-		(
-			async () => {
-				const LocomotiveScroll = (await import('locomotive-scroll')).default;
-				const locomotiveScroll = new LocomotiveScroll();
-			}
-		)
-	}, [])
 	return (
 		<main>
-			<Loading>
+			{/* <Loading>
 				<Follow className="follow"></Follow>
 				<ProgressBar
 					className="hide"
@@ -79,16 +79,16 @@ export default function Home() {
 			</Loading>
 			{
 				showHeader ?
-					<Content className="content">
+					<Content className="content"> */}
 						<Navbar />
 						<Header />
-						<About/>
+						<About />
 						<div className='h-screen bg-black'></div>
 						<CursorPointer
 							x={x}
 							y={y}
 						/>
-					</Content> : ''}
+					{/* </Content> : ''} */}
 
 
 		</main>

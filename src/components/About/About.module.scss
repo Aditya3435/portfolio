@@ -1,20 +1,22 @@
 .aboutMain{
     display: flex;
-    height: 70vh;
+    // height:0vh;
+    margin-bottom: 5rem;
     background-color: #000;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: center;
     color: rgb(211, 211, 211);
 }
 
 .aboutBody{
-    width: 90%;
+    margin-top: 2.5rem;
+    width: 60%;
     display: flex;
     flex-wrap: wrap;
 }
 
 .aboutBody p{
-    font-size: 2vw;
+    font-size: 1.3rem;
     margin: 0px;
     margin-right: 1.5vw;
     font-weight: 700;
@@ -22,4 +24,5 @@
 
 .aboutBody span{
     opacity: 0.2;
+    
 }
