@@ -1,11 +1,11 @@
 .menu{
     height: 100vh;
     width: 100%;
-    background-color: #000;
     position: fixed;
+    background-color: var(--background-end-rgb);
     right: 0;
     top: 0;
-    color: white;
+    color:var(--foreground-rgb);
     z-index: 1;
     .body{
         box-sizing: border-box;
@@ -31,7 +31,6 @@
 
             a{
                 text-decoration: none;
-                color: white;
                 font-weight: 300;
             }
             

@@ -7,65 +7,63 @@ import styled from "styled-components";
 import { gsap, CSSPlugin, Expo } from "gsap";
 import About from '@/components/About/About';
 import AOS from 'aos'; import 'aos/dist/aos.css';
+import { ThemeProvider } from '@/components/Theme/Theme';
+import ThemeToggle from '@/components/ToggleTheme/ToggleTheme';
+import Projects from '@/components/Projects/Projects';
+import Contact from '@/components/Contact/Contact';
 gsap.registerPlugin(CSSPlugin);
 
 export default function Home() {
-	useEffect(() => {
-        AOS.init({
-            // duration: 2000,
-            once: false,
-        });
 
-    }, [])
+	useEffect(() => {
+		AOS.init({
+			once: false,
+		});
+
+	}, [])
 	// useEffect(() => {
-		// (
-			// async () => {
-				// const LocomotiveScroll = (await import('locomotive-scroll')).default
-				// const locomotiveScroll = new LocomotiveScroll();
-			// }
-		// )()
+	// (
+	// async () => {
+	// const LocomotiveScroll = (await import('locomotive-scroll')).default
+	// const locomotiveScroll = new LocomotiveScroll();
+	// }
+	// )()
+
 	// }, [])
 	const [counter, setCounter] = useState(0);
 	const [showHeader, setShowHeader] = useState(false);// false
-    // useEffect(() => {
-    //     let scroll;
-    //     import("locomotive-scroll").then((locomotiveModule) => {
-    //         scroll = new locomotiveModule.default({
-    //             el: document.querySelector("[data-scroll-container]"),
-    //             smooth: true,
-    //             smoothMobile: false,
-    //             resetNativeScroll: true
-    //         });
-    //     });
+	// useEffect(() => {
+	// 	const count = setInterval(() => {
+	// 		setCounter((counter) =>
+	// 			counter < 100
+	// 				? counter + 1
+	// 				: (clearInterval(count), setCounter(100), reveal())
+	// 		);
+	// 	}, 25);
+	// }, []);
+	// const reveal = () => {
+	// 	const t1 = gsap.timeline({
+	// 		onComplete: () => {
+	// 			setShowHeader(true)
+	// 			t1.to(".content", { width: "100%", ease: Expo.easeInOut, duration: 0.3 });
 
-    //     // `useEffect`'s cleanup phase
-    //     return () => {
-    //         if (scroll) scroll.destroy();
-    //     }
-    // });
-	const reveal = () => {
-		const t1 = gsap.timeline({
-			onComplete: () => {
-				setShowHeader(true)
-				t1.to(".content", { width: "100%", ease: Expo.easeInOut, duration: 0.3 });
-
-			},
-		});
-		t1.to(".follow", {
-			width: "100%",
-			ease: Expo.easeInOut,
-			duration: 1.2,
-			delay: 0.7,
-		})
-			.to(".hide", { opacity: 0, duration: 0.3 })
-			.to(".hide", { display: "none", duration: 0.3 })
-			.to(".follow", {
-				height: "100%",
-				ease: Expo.easeInOut,
-				duration: 0.7,
-				delay: 0.5,
-			})
-	};
+	// 		},
+	// 	});
+	// 	t1.to(".follow", {
+	// 		width: "100%",
+	// 		ease: Expo.easeInOut,
+	// 		duration: 1.2,
+	// 		delay: 0.7,
+	// 	})
+	// 		.to(".hide", { opacity: 0, duration: 0.3 })
+	// 		.to(".hide", { display: "none", duration: 0.3 })
+	// 		.to(".follow", {
+	// 			height: "100%",
+	// 			ease: Expo.easeInOut,
+	// 			duration: 0.7,
+	// 			delay: 0.5,
+	// 		})
+	// };
 	const [x, setX] = useState(0)
 	const [y, setY] = useState(0)
 
@@ -80,33 +78,37 @@ export default function Home() {
 		}
 	}, [x, y])
 	return (
-		<main>
-			{/* <Loading>
-				<Follow className="follow"></Follow>
-				<ProgressBar
-					className="hide"
-					id="progress-bar"
-					style={{ width: counter + "%" }}
-				></ProgressBar>
-				<Count id="count" className="hide">
-					{counter}%
-				</Count>
-			</Loading>
-			{
-				showHeader ?
-					<Content className="content"> */}
-						<Navbar />
-						<Header />
-						<About />
-						<div className='h-screen bg-black'></div>
-						<CursorPointer
-							x={x}
-							y={y}
-						/>
-					{/* </Content> : ''} */}
+		<ThemeProvider>
+			<main>
+				{/* <Loading>
+					<Follow className="follow"></Follow>
+					<ProgressBar
+						className="hide"
+						id="progress-bar"
+						style={{ width: counter + "%" }}
+					></ProgressBar>
+					<Count id="count" className="hide">
+						{counter}%
+					</Count>
+				</Loading>
+				{
+					showHeader ?
+						<Content className="content"> */}
+							<Navbar />
+							<Header />
+							<About />
+							<Projects/>
+							<Contact/>
+							{/* <CursorPointer
+								x={x}
+								y={y}
+							/> */}
+							<ThemeToggle />
+						{/* </Content> : ''} */}
 
 
-		</main>
+			</main>
+		</ThemeProvider>
 	)
 }
 const Loading = styled.div`

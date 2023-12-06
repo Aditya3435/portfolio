@@ -9,6 +9,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import InfiniteText from '../InfinteText/InfiniteText';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTheme } from '../Theme/Theme';
 
 function Header() {
     const typedTextRef = useRef(null)
@@ -92,7 +93,7 @@ function Header() {
 
 
     return (
-        <main className='bg-black h-screen flex flex-col gap-1 text-white' ref={ref}>
+        <main className=' h-screen flex flex-col gap-1' ref={ref}>
             {isInView ? <div className='m-auto mt-40'>
                 <motion.div
                     initial="hidden"
@@ -109,7 +110,7 @@ function Header() {
             </div> : ''}
             {/* <InfiniteText/> */}
             <div className='scroll-down flex flex-col items-center'>
-                <div className='text-white p-1 rounded-md pointer-events-none'>Scroll Down</div>
+                <div className=' p-1 rounded-md pointer-events-none'>Scroll Down</div>
                 <KeyboardArrowDownIcon />
             </div>
 
