@@ -49,7 +49,7 @@ function Projects() {
                     end: "bottom 100%",
                     animation: animation,
                     scrub: true,
-                    markers: true
+                    // markers: true
                 })
             })
 
@@ -113,11 +113,11 @@ function Projects() {
 
 
                     <div className="desktopPhotos"  >
-                        <a href='#' className="desktopPhoto opencv"></a>
-                        <a href='#' className="desktopPhoto nimbus"></a>
-                        <a href='#' className="desktopPhoto hillffair"></a>
-                        <a href='#' className="desktopPhoto pomodoro"></a>
-                        <a href='#' className="desktopPhoto password"></a>
+                        <a href='https://github.com/Aditya3435/Attendance-System-using-Face-Recognition' target='_blank' className="desktopPhoto opencv"></a>
+                        <a href='https://festnimbus.nith.ac.in/' target='_blank' className="desktopPhoto nimbus"></a>
+                        <a href='https://www.hillffairnith.com/' target='_blank' className="desktopPhoto hillffair"></a>
+                        <a href='https://aditya3435.github.io/pomodoro-app/' target='_blank' className="desktopPhoto pomodoro"></a>
+                        <a href='https://github.com/Aditya3435/generate_password_using_terminal' target='_blank' className="desktopPhoto password"></a>
                     </div>
 
                 </div>
