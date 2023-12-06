@@ -6,28 +6,43 @@ import CursorPointer from '@/components/Cursor';
 import styled from "styled-components";
 import { gsap, CSSPlugin, Expo } from "gsap";
 import About from '@/components/About/About';
+import AOS from 'aos'; import 'aos/dist/aos.css';
 gsap.registerPlugin(CSSPlugin);
 
 export default function Home() {
 	useEffect(() => {
-		(
-			async () => {
-				const LocomotiveScroll = (await import('locomotive-scroll')).default
-				const locomotiveScroll = new LocomotiveScroll();
-			}
-		)()
-	}, [])
+        AOS.init({
+            // duration: 2000,
+            once: false,
+        });
+
+    }, [])
+	// useEffect(() => {
+		// (
+			// async () => {
+				// const LocomotiveScroll = (await import('locomotive-scroll')).default
+				// const locomotiveScroll = new LocomotiveScroll();
+			// }
+		// )()
+	// }, [])
 	const [counter, setCounter] = useState(0);
 	const [showHeader, setShowHeader] = useState(false);// false
-	useEffect(() => {
-		const count = setInterval(() => {
-			setCounter((counter) =>
-				counter < 100
-					? counter + 1
-					: (clearInterval(count), setCounter(100), reveal())
-			);
-		}, 25);
-	}, []);
+    // useEffect(() => {
+    //     let scroll;
+    //     import("locomotive-scroll").then((locomotiveModule) => {
+    //         scroll = new locomotiveModule.default({
+    //             el: document.querySelector("[data-scroll-container]"),
+    //             smooth: true,
+    //             smoothMobile: false,
+    //             resetNativeScroll: true
+    //         });
+    //     });
+
+    //     // `useEffect`'s cleanup phase
+    //     return () => {
+    //         if (scroll) scroll.destroy();
+    //     }
+    // });
 	const reveal = () => {
 		const t1 = gsap.timeline({
 			onComplete: () => {

@@ -78,7 +78,7 @@ function Header() {
 
         timeline
             .from(typedTextRef.current, {clipPath: `inset(15%)`})
-            .to(ref.current, {height: "300px"}, 0)
+            .to(ref.current, {height: "400px"}, 0)
     }, [])
     useEffect(() => {
         if (isInView) {
@@ -89,13 +89,7 @@ function Header() {
             clearTimeout(typeTimeout);
           };
     }, [isInView]);
-    useEffect(() => {
-        AOS.init({
-            duration: 2000,
-            once: false,
-        });
 
-    }, [])
 
     return (
         <main className='bg-black h-screen flex flex-col gap-1 text-white' ref={ref}>
@@ -105,7 +99,7 @@ function Header() {
                     animate="visible"
                     variants={container}
                 >
-                    <div className="container">
+                    <div className="container" data-scroll data-scroll-speed='0.7'>
                         {placeholderText.map((item, index) => {
                             return <AnimatedText {...item} key={index} />;
                         })}

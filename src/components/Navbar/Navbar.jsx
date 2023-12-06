@@ -8,7 +8,10 @@ export default function Navbar() {
 
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
-
+  useEffect(()=> {
+    if(isActive) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "auto";
+  }, [isActive])
   useEffect( () => {
     if(isActive) setIsActive(false)
   }, [pathname])

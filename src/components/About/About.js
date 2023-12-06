@@ -37,13 +37,12 @@ export default function About() {
                         trigger: section,
                         scrub: 0.9,
                         start: `-1000px`,
-                        end: `+=150px`,
+                        end: `+=100px`,
                     },
                 }
             );
         });
     };
-
 
     const createAnimation = () => {
         gsap.to(refs.current, {
@@ -54,6 +53,7 @@ export default function About() {
                 end: `+=200px`,
             },
             opacity: 1,
+            color:'#008080',
             ease: "none",
             stagger: 0.1,
             duration: 1,
@@ -79,7 +79,7 @@ export default function About() {
 
     return (
         <div className='bg-black flex flex-col justify-center items-center main-about border-t-2 border-white' ref={container} >
-            <div className=' text-white text-7xl mt-8'>About me</div>
+            <div className=' text-white text-7xl mt-8' data-aos='fade-down' data-aos-duration='100'>About me</div>
             <main className={styles.aboutMain}>
                 <div ref={body} className={styles.aboutBody}>
                     {
