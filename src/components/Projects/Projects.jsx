@@ -62,7 +62,7 @@ function Projects() {
 
     }, [])
     return (
-        <div className='border-b-2 border-gray-50'>
+        <div className='border-b-2 border-gray-50' id='projects'>
             <div className="gallery">
                 <div className="left">
                     <div className="desktopContent">
@@ -84,7 +84,7 @@ function Projects() {
                         </div>
                         <div className="desktopContentSection" ref={ref4}>
                             <h1>Password Generator using Terminal</h1>
-                            <p>cripted a password generator for the terminal using a Bash script, ensuring ease of use, and 100% secure random password by providing clear instructions in a well-documented README, guiding users through the installation and usage of the script..</p>
+                            <p>Scripted a password generator for the terminal using a Bash script, ensuring ease of use, and 100% secure random password by providing clear instructions in a well-documented README, guiding users through the installation and usage of the script..</p>
                         </div>
 
 

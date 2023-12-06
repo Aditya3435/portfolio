@@ -37,7 +37,7 @@ export default function Navbar() {
       </div>
     </div>
     <AnimatePresence mode="wait">
-      {isActive && <Nav />}
+      {isActive && <Nav setIsActive={setIsActive}/>}
     </AnimatePresence>
     </>
   )

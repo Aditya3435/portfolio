@@ -18,25 +18,25 @@ const navItems = [
   },
   {
     title: "About",
-    href: "/about",
+    href: "#about",
     src: "about.png",
     color: "#118ab2"
   },
   {
     title: "Projects",
-    href: "/projects",
+    href: "#projects",
     src: "projects.png",
     color: "#023047"
   },
   {
     title: "Contact Me",
-    href: "/contact",
-    src: "contact.jpg",
+    href: "#contact",
+    src: "contact.png",
     color: "#3d5a80"
   },
 ]
 
-export default function NavItems() {
+export default function NavItems({setIsActive}) {
 
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
@@ -48,7 +48,7 @@ export default function NavItems() {
         <div onMouseLeave={() => { setSelectedIndicator(pathname) }} className={styles.nav}>
           {
             navItems.map((data, index) => {
-              return <Link key={index} data={{ ...data, index }} setModal={setModal} isActive={selectedIndicator == data.href} setSelectedIndicator={setSelectedIndicator}></Link>
+              return <Link key={index} data={{ ...data, index }} setModal={setModal} isActive={selectedIndicator == data.href} setSelectedIndicator={setSelectedIndicator}  setIsActive={setIsActive}></Link>
             })
           }
         </div>

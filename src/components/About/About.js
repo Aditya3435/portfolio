@@ -79,7 +79,7 @@ export default function About() {
     }
 
     return (
-        <div className='flex flex-col justify-center items-center main-about border-t-2 border-white' ref={container} >
+        <div className='flex flex-col justify-center items-center main-about border-t-2 border-white' ref={container} id='about'>
             <div className='  text-7xl mt-8' data-aos='fade-down' data-aos-duration='100'>About me</div>
             <main className={styles.aboutMain}>
                 <div ref={body} className={styles.aboutBody}>
@@ -112,7 +112,7 @@ export default function About() {
             </div>
             <div className='tech-stack-container flex flex-col gap-8 mt-20 '>
                 <div className=' text-7xl m-auto'>CP Profiles</div>
-                <div className={`scroller overflow-auto text-xl overflow-x-hidden ${isLightTheme ? "bg-gray-200" :"bg-slate-900"}`}>
+                <div className={`scroller overflow-auto text-xl overflow-x-hidden ${isLightTheme ? "bg-gray-100" :"bg-slate-900"}`}>
                     {[1].map((el) => (
                         <section key={el}>
                             <div className="wrapper flex items-center gap-12 text-xl font-medium ">
