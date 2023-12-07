@@ -11,19 +11,30 @@ function Projects() {
     const ref2 = useRef(null);
     const ref3 = useRef(null);
     const ref4 = useRef(null);
+    const ref0 = useRef(null);
+    const view0 = useInView(ref0);
     const view1 = useInView(ref1);
     const view2 = useInView(ref2);
     const view3 = useInView(ref3);
     const view4 = useInView(ref4);
-    let inview = view1 || view2|| view3 || view4;
+    let inview = view1 || view2|| view3;
     useEffect(()=> {
         if(inview) {
-            document.querySelector('.desktopPhotos').classList.add('fixed');
+            console.log("2 3 or 4")
+            document.querySelector('.desktopPhotos').classList.add('right-fixed');
+            document.querySelector('.desktopPhotos').classList.remove('right-relative');
         }
         else {
-            document.querySelector('.desktopPhotos').classList.remove('fixed');
+            if(view0){
+                console.log("view0")
+                document.querySelector('.desktopPhotos').classList.add('right-relative');
+            }
+            else if(view4){
+                document.querySelector('.desktopPhotos').classList.remove('right-relative');
+            }   
+            document.querySelector('.desktopPhotos').classList.remove('right-fixed');
         }
-    },[inview]);
+    },[inview,view0, view4]);
     useEffect(() => {
         const details = gsap.utils.toArray(".desktopContentSection:not(:first-child)")
         const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)")
@@ -66,7 +77,7 @@ function Projects() {
             <div className="gallery">
                 <div className="left">
                     <div className="desktopContent">
-                        <div className="desktopContentSection">
+                        <div className="desktopContentSection" ref={ref0}>
                             <h1>Attendance system using face recognition</h1>
                             <p>This project utilizes openCV&apos;s face recognition model to create an advanced attendance system. It captures user photos, automatically updating attendance records in a spreadsheet. With a user-friendly interface, emphasis on security, and continuous improvement, it offers a reliable and efficient solution for organizations seeking streamlined attendance tracking.</p>
                         </div>

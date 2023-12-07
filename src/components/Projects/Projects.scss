@@ -25,6 +25,7 @@
 	display:flex;
 	flex-direction:column;
 	justify-content:center;
+    position: relative; // 
 }
 
 .desktopContent {
@@ -46,17 +47,21 @@
 	width:40vw;
     height: 40vw;
 	border-radius:20px;
-	position:relative;
+	position:absolute; // relative
+    bottom: -390%;
 	overflow :hidden;
 	// box-shadow:4px 4px 4px rgba(0, 0, 0, 0.4);
 }
 
 
-.fixed {
+.right-fixed {
     position: fixed;
+    top: 15%;
+}
+.right-relative {
+    position: relative;
     top: 10%;
 }
-
 .opencv {
     background: url('/images/projects/opencv.png');
 
@@ -85,8 +90,6 @@
     background-repeat: no-repeat;
     &:last-child {
         background-position: left;
-        // position: relative;
-        z-index: 0;
     }
 }
 
