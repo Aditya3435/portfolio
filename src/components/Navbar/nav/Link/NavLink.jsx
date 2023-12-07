@@ -7,9 +7,9 @@ export default function NavLink({ data, isActive, setModal, setIsActive }) {
     const { title, href, index } = data;
 
     return (
-        <motion.div className={styles.link} onMouseEnter={() => {setModal({active: true, index}) }} onMouseLeave={() => {setModal({active: false, index})}} onClick={()=>{setIsActive(false)}} custom={index} variants={slide} initial="initial" animate="enter" exit="exit">
-            <Link href={href}>{title}</Link>
+        <Link href={href} className={styles.link} onMouseEnter={() => {setModal({active: true, index}) }} onMouseLeave={() => {setModal({active: false, index})}} onClick={()=>{setIsActive(false)}} custom={index} variants={slide} initial="initial" animate="enter" exit="exit">
+            <div >{title}</div>
             <div className={styles.rightArrow}><ArrowForwardIcon/></div>
-        </motion.div>
+        </Link>
     )
 }

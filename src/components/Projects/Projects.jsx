@@ -74,6 +74,7 @@ function Projects() {
     }, [])
     return (
         <div className='' id='projects'>
+                <div className=' text-7xl m-auto mt-16 w-full flex justify-center'>Projects</div>
             <div className="gallery">
                 <div className="left">
                     <div className="desktopContent">
