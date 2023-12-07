@@ -1,26 +1,26 @@
-'use client';
-import { useEffect, useRef, useState, useLayoutEffect } from 'react'
-import Header from '@/components/Header/Header'
-import Navbar from '@/components/Navbar/Navbar';
-import CursorPointer from '@/components/Cursor';
+"use client";
+import { useEffect, useRef, useState, useLayoutEffect } from "react";
+import Header from "@/components/Header/Header";
+import Navbar from "@/components/Navbar/Navbar";
+import CursorPointer from "@/components/Cursor";
 import styled from "styled-components";
 import { gsap, Expo } from "gsap";
-import About from '@/components/About/About';
-import AOS from 'aos'; import 'aos/dist/aos.css';
-import { ThemeProvider } from '@/components/Theme/Theme';
-import ThemeToggle from '@/components/ToggleTheme/ToggleTheme';
-import Projects from '@/components/Projects/Projects';
-import Contact from '@/components/Contact/Contact';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { ThemeProvider } from "@/components/Theme/Theme";
+import ThemeToggle from "@/components/ToggleTheme/ToggleTheme";
+import Projects from "@/components/Projects/Projects";
+import Contact from "@/components/Contact/Contact";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Experience from '@/components/Experience/Experience';
+import Experience from "@/components/Experience/Experience";
+import About from "@/components/About/About";
 gsap.registerPlugin(ScrollTrigger);
-
 
 export default function Home() {
 	const component = useRef();
 	const slider = useRef();
 	const [counter, setCounter] = useState(0);
-	const [showHeader, setShowHeader] = useState(false);// false
+	const [showHeader, setShowHeader] = useState(false); // false
 	useLayoutEffect(() => {
 		if (showHeader) {
 			let ctx = gsap.context(() => {
@@ -35,7 +35,7 @@ export default function Home() {
 						// snap: 1 / (panels.length - 1),
 						end: () => "+=" + slider.current.offsetWidth,
 						// markers:true,
-					}
+					},
 				});
 			});
 			return () => ctx.revert();
@@ -44,20 +44,8 @@ export default function Home() {
 	useEffect(() => {
 		AOS.init({
 			once: false,
-		})
-	}
-	);
-
-	// }, [])
-	// useEffect(() => {
-	// (
-	// async () => {
-	// const LocomotiveScroll = (await import('locomotive-scroll')).default
-	// const locomotiveScroll = new LocomotiveScroll();
-	// }
-	// )()
-
-	// }, [])
+		});
+	}, []);
 
 	useEffect(() => {
 		const count = setInterval(() => {
@@ -71,9 +59,13 @@ export default function Home() {
 	const reveal = () => {
 		const t1 = gsap.timeline({
 			onComplete: () => {
-				t1.to(".content", { width: "100%", ease: Expo.easeInOut, duration: 0.3 });
+				t1.to(".content", {
+					width: "100%",
+					ease: Expo.easeInOut,
+					duration: 0.3,
+				});
 				setTimeout(() => {
-					setShowHeader(true)
+					setShowHeader(true);
 				}, 500);
 			},
 		});
@@ -90,60 +82,62 @@ export default function Home() {
 				ease: Expo.easeInOut,
 				duration: 0.7,
 				delay: 0.5,
-			})
+			});
 	};
-	const [x, setX] = useState(0)
-	const [y, setY] = useState(0)
+	const [x, setX] = useState(0);
+	const [y, setY] = useState(0);
 
 	useEffect(() => {
 		const handleMouseMovement = (e) => {
-			setX(e.clientX)
-			setY(e.clientY)
-		}
-		document.addEventListener('mousemove', handleMouseMovement);
+			setX(e.clientX);
+			setY(e.clientY);
+		};
+		document.addEventListener("mousemove", handleMouseMovement);
 		return () => {
-			document.removeEventListener('mousemove', handleMouseMovement);
-		}
-	}, [x, y])
+			document.removeEventListener("mousemove", handleMouseMovement);
+		};
+	}, [x, y]);
 	return (
 		<ThemeProvider>
-			<main >
-				{
-					showHeader ?
-						<Content className="content" ref={component}>
-							<Navbar />
-							<Header />
-							<About />
-							<Projects />
-							<div className='page-container' ref={slider}>
-								<div className='scroll-panel'><Experience /></div>
-								<div className='scroll-panel' id='contact'><Contact /></div>
+			<main>
+				{showHeader ? (
+					<Content className="content" ref={component}>
+						<Navbar />
+						<Header />
+						<About />
+						<Projects />
+						<div className="page-container" ref={slider}>
+							<div className="scroll-panel">
+								<Experience />
 							</div>
-							<ThemeToggle />
-						</Content>
-						:
-						<Loading>
-							<Follow className="follow"></Follow>
-							<ProgressBar
-								className="hide"
-								id="progress-bar"
-								style={{ width: counter + "%" }}
-							></ProgressBar>
-							<Count id="count" className="hide">
-								{counter}%
-							</Count>
-						</Loading>
-				}
-				<CursorPointer x={x} y={y}/>
-
+							<div className="scroll-panel" id="contact">
+								<Contact />
+							</div>
+						</div>
+						<ThemeToggle />
+					</Content>
+				) : (
+					<Loading>
+						<Follow className="follow"></Follow>
+						<ProgressBar
+							className="hide"
+							id="progress-bar"
+							style={{ width: counter + "%" }}
+						></ProgressBar>
+						<Count id="count" className="hide">
+							{counter}%
+						</Count>
+					</Loading>
+				)}
+				<CursorPointer x={x} y={y} />
 			</main>
 		</ThemeProvider>
-	)
+	);
 }
 const Loading = styled.div`
   height: 100%;
   width: 100%;
-  background-color:#0C0D0F;
+  background-color: #0c0d0f;
   display: flex;
   justify-content: center;
   align-items: center;
