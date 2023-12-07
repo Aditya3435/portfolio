@@ -1,50 +1,63 @@
-.modalContainer{
-    height: 140px;
-    width: 300px;
-    position: absolute;
-    background-color: white;
-    overflow: hidden;
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+$color_1: #000;
+$background-color_1: white;
+$background-color_2: #fff;
+$background-color_3: transparent;
 
-.modalSlider{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+.modalContainer {
+	height: 140px;
+	width: 300px;
+	position: absolute;
+	background-color: $background-color_1;
+	overflow: hidden;
+	pointer-events: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-
-.modal{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.modalSlider {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }
-
-.modal img{
-    height: auto;
+.modal {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	img {
+		height: auto;
+	}
 }
-
-.cursor, .cursorLabel{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #fff;
-    color: #000;
-    position: absolute;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: 300;
-    pointer-events: none;
+.cursor {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: $background-color_2;
+	color: $color_1;
+	position: absolute;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.8rem;
+	font-weight: 300;
+	pointer-events: none;
 }
-
-.cursorLabel{
-    background-color: transparent;
+.cursorLabel {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: $background-color_2;
+	color: $color_1;
+	position: absolute;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.8rem;
+	font-weight: 300;
+	pointer-events: none;
+	background-color: $background-color_3;
 }

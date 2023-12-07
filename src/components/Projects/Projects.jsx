@@ -1,139 +1,156 @@
-import React, { useEffect, useRef } from 'react'
-import './Projects.scss'
-import gsap from 'gsap'
-import { CSSPlugin } from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-import { useInView } from 'framer-motion';
+import React, { useEffect, useRef } from "react";
+import "./Projects.scss";
+import gsap from "gsap";
+import { CSSPlugin } from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { useInView } from "framer-motion";
 gsap.registerPlugin(CSSPlugin);
 
 function Projects() {
-    const ref1 = useRef(null);
-    const ref2 = useRef(null);
-    const ref3 = useRef(null);
-    const ref4 = useRef(null);
-    const ref0 = useRef(null);
-    const view0 = useInView(ref0);
-    const view1 = useInView(ref1);
-    const view2 = useInView(ref2);
-    const view3 = useInView(ref3);
-    const view4 = useInView(ref4);
-    let inview = view1 || view2|| view3;
-    useEffect(()=> {
-        if(inview) {
-            document.querySelector('.desktopPhotos').classList.add('right-fixed');
-            document.querySelector('.desktopPhotos').classList.remove('right-relative');
-        }
-        else {
-            if(view0){
-                document.querySelector('.desktopPhotos').classList.add('right-relative');
-            }
-            else if(view4){
-                document.querySelector('.desktopPhotos').classList.remove('right-relative');
-            }   
-            document.querySelector('.desktopPhotos').classList.remove('right-fixed');
-        }
-    },[inview,view0, view4]);
-    useEffect(() => {
-        const details = gsap.utils.toArray(".desktopContentSection:not(:first-child)")
-        const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)")
+  const contentData = [
+    {
+      id: "0",
+      title: "Attendance system using face recognition",
+      description:
+        "This project utilizes openCV's face recognition model to create an advanced attendance system. It captures user photos, automatically updating attendance records in a spreadsheet. With a user-friendly interface, emphasis on security, and continuous improvement, it offers a reliable and efficient solution for organizations seeking streamlined attendance tracking.",
+      img: "opencv",
+      link: "https://github.com/Aditya3435/Attendance-System-using-Face-Recognition",
+    },
+    {
+      id: "1",
+      title: "Nimbus Technical Fest Website",
+      description:
+        "This college technical fest website, developed using React.js, SASS, Canvajs, ThreeJs, and pnpm packages, boasts an engaging design featuring captivating animations across six distinct pages. Each page is thoughtfully crafted with a unique layout style, contributing to an immersive and visually appealing user experience.",
+      img: "nimbus",
+      link: "https://festnimbus.nith.ac.in/",
+    },
+    {
+      id: "2",
+      title: "Hillffair Cultural Fest Website",
+      description:
+        "Made this cultural fest website with my team using Reactjs showcasing NIT hamirpur cultural fest thoroughly.",
+      img: "hillffair",
+      link: "https://www.hillffairnith.com/",
+    },
+    {
+      id: "3",
+      title: "Pomodoro Web App",
+      description:
+        "To enhance productivity, I developed a Pomodoro timer web app using HTML, CSS, and JavaScript. The app offers the flexibility of setting time manually or using default settings, catering to individual preferences. Additionally, it provides three distinct color themes to optimize the user experience, making it a versatile and visually appealing tool for efficient time management.",
+      img: "pomodoro",
+      link: "https://aditya3435.github.io/pomodoro-app/",
+    },
+    {
+      id: "4",
+      title: "Password Generator using Terminal",
+      description:
+        "Scripted a password generator for the terminal using a Bash script, ensuring ease of use, and 100% secure random password by providing clear instructions in a well-documented README, guiding users through the installation and usage of the script.",
+      img: "password",
+      link: "https://github.com/Aditya3435/generate_password_using_terminal",
+    },
+  ];
+  const refsAndViews = {};
+  contentData.forEach((item) => {
+    const ref = useRef(null);
+    const view = useInView(ref);
+    refsAndViews[item.id] = { ref, view };
+  });
 
+  const inview =
+    refsAndViews["1"].view || refsAndViews["2"].view || refsAndViews["3"].view;
 
-        gsap.set(photos, { yPercent: 101 })
+  useEffect(() => {
+    const desktopPhotosElement = document.querySelector(".desktopPhotos");
+    const { view: view0 } = refsAndViews["0"];
+    const { view: view4 } = refsAndViews["4"];
 
-        const allPhotos = gsap.utils.toArray(".desktopPhoto")
+    desktopPhotosElement.classList.toggle("right-fixed", inview);
+    desktopPhotosElement.classList.toggle("right-relative", !inview && view0);
+  }, [inview, refsAndViews]);
 
+  useEffect(() => {
+    const details = gsap.utils.toArray(
+      ".desktopContentSection:not(:first-child)"
+    );
+    const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)");
 
-        let mm = gsap.matchMedia();
+    gsap.set(photos, { yPercent: 101 });
 
-        mm.add("(min-width: 600px)", () => {
-            details.forEach((detail, index) => {
+    const allPhotos = gsap.utils.toArray(".desktopPhoto");
 
-                let headline = detail.querySelector("h1")
-                let animation = gsap.timeline()
-                    .to(photos[index], { yPercent: 0 })
-                    .set(allPhotos[index], { autoAlpha: 0 })
-                ScrollTrigger.create({
-                    trigger: headline,
-                    start: "top 150%",
-                    end: "bottom 100%",
-                    animation: animation,
-                    scrub: true,
-                    // markers: true
-                })
-            })
+    let mm = gsap.matchMedia();
 
-
-
-            return () => { 
-                console.log("mobile")
-            };
+    mm.add("(min-width: 600px)", () => {
+      details.forEach((detail, index) => {
+        let headline = detail.querySelector("h1");
+        let animation = gsap
+          .timeline()
+          .to(photos[index], { yPercent: 0 })
+          .set(allPhotos[index], { autoAlpha: 0 });
+        ScrollTrigger.create({
+          trigger: headline,
+          start: "top 100%",
+          end: "bottom 60%",
+          animation: animation,
+          scrub: true,
         });
+      });
 
-    }, [])
-    return (
-        <div className='' id='projects'>
-                <div className=' text-7xl m-auto mt-16 w-full flex justify-center'>Projects</div>
-            <div className="gallery">
-                <div className="left">
-                    <div className="desktopContent">
-                        <div className="desktopContentSection" ref={ref0}>
-                            <h1>Attendance system using face recognition</h1>
-                            <p>This project utilizes openCV&apos;s face recognition model to create an advanced attendance system. It captures user photos, automatically updating attendance records in a spreadsheet. With a user-friendly interface, emphasis on security, and continuous improvement, it offers a reliable and efficient solution for organizations seeking streamlined attendance tracking.</p>
-                        </div>
-                        <div className="desktopContentSection"  ref={ref1}>
-                            <h1>Nimbus Technical Fest Website</h1>
-                            <p>This college technical fest website, developed using React.js, SASS, Canvajs, ThreeJs, and pnpm packages, boasts an engaging design featuring captivating animations across six distinct pages. Each page is thoughtfully crafted with a unique layout style, contributing to an immersive and visually appealing user experience. </p>
-                        </div>
-                        <div className="desktopContentSection" ref={ref2}>
-                            <h1>Hillffair Cultural Fest Website</h1>
-                            <p>Made this cultural fest website with my team using Reactjs showcasing NIT hamirpur cultural fest thoroughly.</p>
-                        </div>
-                        <div className="desktopContentSection" ref={ref3}>
-                            <h1>Pomodoro Web App</h1>
-                            <p>To enhance productivity, I developed a Pomodoro timer web app using HTML, CSS, and JavaScript. The app offers the flexibility of setting time manually or using default settings, catering to individual preferences. Additionally, it provides three distinct color themes to optimize the user experience, making it a versatile and visually appealing tool for efficient time management.</p>
-                        </div>
-                        <div className="desktopContentSection" ref={ref4}>
-                            <h1>Password Generator using Terminal</h1>
-                            <p>Scripted a password generator for the terminal using a Bash script, ensuring ease of use, and 100% secure random password by providing clear instructions in a well-documented README, guiding users through the installation and usage of the script..</p>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <div className="right">
-
-                    <div className="mobileContent">
-                        <div className="mobilePhoto opencv" ></div>
-                        <h1>Red</h1>
-                        <p>Red is a color often associated with strong emotions such as passion, love, and anger. Its a bold and attention-grabbing color that can evoke feelings of excitement, warmth, and energy.</p>
-
-                        <div className="mobilePhoto nimbus"></div>
-                        <h1>Green</h1>
-                        <p>Green is a color that is often associated with nature, growth, and harmony. It is a calming and relaxing color that can evoke feelings of balance, stability, and freshness. In color psychology, green is said to represent balance and stability, making it a popular choice for branding and marketing in the health and wellness industry. </p>
-
-                        <div className="mobilePhoto hillffair"></div>
-                        <h1>Pink</h1>
-                        <p>Pink is a color that is often associated with femininity, romance, and sweetness. It is a softer and more delicate shade of red that can evoke feelings of warmth, love, and nurturing. In the world of branding and marketing, pink is often used to target a female audience or to promote products that are associated with beauty, love, or romance.</p>
-
-                        <div className="mobilePhoto pomodoro"></div>
-                        <h1>Blue</h1>
-                        <p>Blue is a color that is often associated with calmness, trust, and reliability. It is a peaceful and serene color that can evoke feelings of stability, security, and professionalism. In color psychology, blue is said to represent loyalty and trust, making it a popular choice for branding and marketing in the finance and technology industries.</p>
-                    </div>
-
-
-                    <div className="desktopPhotos"  >
-                        <a href='https://github.com/Aditya3435/Attendance-System-using-Face-Recognition' target='_blank' className="desktopPhoto opencv"></a>
-                        <a href='https://festnimbus.nith.ac.in/' target='_blank' className="desktopPhoto nimbus"></a>
-                        <a href='https://www.hillffairnith.com/' target='_blank' className="desktopPhoto hillffair"></a>
-                        <a href='https://aditya3435.github.io/pomodoro-app/' target='_blank' className="desktopPhoto pomodoro"></a>
-                        <a href='https://github.com/Aditya3435/generate_password_using_terminal' target='_blank' className="desktopPhoto password"></a>
-                    </div>
-
-                </div>
-            </div>
+      return () => {
+        console.log("mobile");
+      };
+    });
+  }, []);
+  return (
+    <div className="mt-40" id="projects">
+      <div
+        className=" text-7xl m-auto w-full flex justify-center font-bold first-letter:text-teal"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        PROJECTS
+      </div>
+      <div className="gallery">
+        <div className="left">
+          <div className="desktopContent">
+            {contentData.map((item) => (
+              <div
+                className="desktopContentSection"
+                key={item.id}
+                ref={refsAndViews[item.id].ref}
+              >
+                <h1>{item.title}</h1>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-    )
+
+        <div className="right">
+          <div className="mobileContent">
+            {contentData.map((item) => (
+              <div className={`mobilePhoto ${item.img}`} key={item.id}>
+                <h1>{item.title}</h1>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="desktopPhotos">
+            {contentData.map((item) => (
+              <a
+                className={`desktopPhoto ${item.img}`}
+                target="_blank"
+                href={item.link}
+                key={item.id}
+              >
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default Projects
+export default Projects;

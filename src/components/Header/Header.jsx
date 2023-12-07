@@ -6,7 +6,6 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import './Header.scss'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import InfiniteText from '../InfinteText/InfiniteText';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTheme } from '../Theme/Theme';
@@ -93,13 +92,14 @@ function Header() {
 
 
     return (
-        <main className=' h-screen flex flex-col gap-1' ref={ref}>
+        <main className=' h-screen flex flex-col' ref={ref}>
             {isInView ? <div className='m-auto mt-40'>
                 <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={container}
                 >
+                    <h1 data-aos='fade-right' className='text-2xl'>Hi, my name is</h1>
                     <div className="container" data-scroll data-scroll-speed='0.7'>
                         {placeholderText.map((item, index) => {
                             return <AnimatedText {...item} key={index} />;
@@ -108,7 +108,6 @@ function Header() {
                 </motion.div>
                 <p className='typing-text'>I am a <span className="typed-text" ref={typedTextRef}></span><span className="cursor blink" ref={cursorRef}>&nbsp;</span></p>
             </div> : ''}
-            {/* <InfiniteText/> */}
             <div className='scroll-down flex flex-col items-center'>
                 <div className=' p-1 rounded-md pointer-events-none'>Scroll Down</div>
                 <KeyboardArrowDownIcon />

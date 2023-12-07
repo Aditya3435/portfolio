@@ -1,63 +1,54 @@
+$color_1: var(--teal);
+$font-family_1: var(--redressed);
 
 @keyframes float {
-
-    0% {
-        transform: translatey(0px);
-    }
-
-    50% {
-        transform: translatey(-20px);
-    }
-
-    100% {
-        transform: translatey(0px);
-    }
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
 }
-
 @keyframes appear {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes blink {
+	0%,100% {
+		background: var(--teal);
+	}
+	40%,50% {
+		background: transparent;
+	}
 }
 .typing-text {
-    font-size: 2rem;
+	font-size: 2em;
 }
 .typed-text {
-    color: var(--teal);
-    font-family: var(--redressed);
-  }
-
-  .cursortt {
-    display: inline-block;
-    width: 3px;
-    margin-left: 4px;
-    background: var(--teal);
-  }
-  
-  .cursor.blink {
-    animation: blink 0.8s ease-in-out infinite;
-  }
-  
-  @keyframes blink {
-    0%, 100% {
-      background: var(--teal);
-    }
-    40%, 50% {
-      background: transparent;
-    }
-  }
-    
-
+	color: $color_1;
+	font-family: $font-family_1;
+	font-size: 1.5em;
+}
+.cursortt {
+	display: inline-block;
+	width: 3px;
+	margin-left: 4px;
+	background: var(--teal);
+}
+.cursor.blink {
+	animation: blink 0.8s ease-in-out infinite;
+}
 main {
-    .scroll-down {
-        animation: float 2s ease-in-out infinite, appear 5s ease-in-out 1;
-    }
+	.scroll-down { animation: float 2s ease-in-out infinite, appear 5s ease-in-out 1;
+}
 }

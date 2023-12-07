@@ -80,7 +80,7 @@ export default function About() {
 
   return (
     <div className='flex flex-col justify-center items-center main-about border-t-2 border-white' ref={container} id='about'>
-      <div className='  text-7xl mt-8' data-aos='fade-down' data-aos-duration='100'>About me</div>
+      <div className='  text-7xl mt-16 mb-4 font-bold' data-aos='fade-down' data-aos-duration='1000'>ABOUT ME</div>
       <main className={styles.aboutMain}>
         <div ref={body} className={styles.aboutBody}>
           {
@@ -89,7 +89,7 @@ export default function About() {
         </div>
       </main>
       <div className='tech-stack-container flex flex-col gap-8'>
-        <div className=' text-7xl mt-8 m-auto'>Tech Stack</div>
+        <div className=' text-7xl mt-8 mb-8 m-auto font-bold' data-aos='fade-up' data-aos-duration='1000'>TECH STACK</div>
         <div className="scroller overflow-auto  overflow-x-hidden">
           {[1, 2, 3].map((el) => (
             <section key={el}>
@@ -111,12 +111,12 @@ export default function About() {
         </div>
       </div>
       <div className='tech-stack-container flex flex-col gap-8 mt-20 '>
-        <div className=' text-7xl m-auto'>CP Profiles</div>
-        <div className={`scroller overflow-auto flex items-center gap-4 text-xl overflow-x-hidden ${isLightTheme ? "bg-gray-100" : "bg-slate-900"}`}>
-          <a href='https://anilist.co/user/aditya3435/' target='_blank' title="anilist easter egg(please don't click :)" className={` absolute left-2 ${isLightTheme ? "text-white" : "text-black"}`}>Anilist</a>
+        <div className=' text-7xl m-auto font-bold mt-24'  data-aos='fade-up' data-aos-duration='1000'>CP PROFILES</div>
+        <div className={`scroller overflow-auto flex items-center gap-4 text-xl overflow-x-hidden `}>
+          <a href='https://anilist.co/user/aditya3435/' target='_blank' title="anilist easter egg(please don't click :)" className='absolute left-2 text-background-end'>Anilist</a>
           {[1].map((el) => (
             <section key={el}>
-              <div className="wrapper flex items-center gap-12 text-xl font-medium ">
+              <div className="wrapper flex items-center gap-12 text-xl font-medium">
                 {[1, 2, 3].map((el2) => (
                   <a href={el2 == 1 ? "https://codeforces.com/profile/aditya3435/" : el2 == 2 ? "https://codechef.com/users/aditya3435" : "https://leetcode.com/aditya3435/"} key={el2} target='_blank'>
                     <Image
@@ -131,7 +131,7 @@ export default function About() {
               </div>
             </section>
           ))}
-          <a href='https://www.instagram.com/am_proton/' target='_blank' title="am_proton easter egg(please don't click)" className={`absolute right-2 ${isLightTheme ? "text-white" : "text-black"}`}>am_proton</a>
+          <a href='https://www.instagram.com/am_proton/' target='_blank' title="am_proton easter egg(please don't click)" className='absolute right-2 text-background-end'>am_proton</a>
         </div>
       </div>
     </div>

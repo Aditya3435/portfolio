@@ -34,6 +34,7 @@ export default function Home() {
 						scrub: 1,
 						// snap: 1 / (panels.length - 1),
 						end: () => "+=" + slider.current.offsetWidth,
+						markers:true,
 					}
 				});
 			});
@@ -142,7 +143,7 @@ export default function Home() {
 const Loading = styled.div`
   height: 100%;
   width: 100%;
-  background-color: #121212;
+  background-color:#0C0D0F;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,7 +152,7 @@ const Loading = styled.div`
 `;
 const Follow = styled.div`
   position: absolute;
-  background-color: #000;
+  background-color: #fff;
   height: 2px;
   width: 0;
   left: 0;

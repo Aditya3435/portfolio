@@ -3,7 +3,6 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import AnchorIcon from '@mui/icons-material/Anchor';
 import 'react-vertical-timeline-component/style.min.css'
 import { inView, useInView } from 'framer-motion';
-import './Experience.scss'
 function Experience() {
     const ref = useRef(null);
     const view = useInView(ref);
