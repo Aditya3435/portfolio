@@ -14,6 +14,8 @@ const CursorPointer = styled.div.attrs(props => ({
     width: 5rem;
     height: 5rem;
     transform: translate(-50%, -50%);
+    z-index: 999;
+    pointer-events: none;
 `
 
 

@@ -72,3 +72,5 @@ main .page-container {
 ::-webkit-scrollbar-corner {
   background-color: #ffffff; /* Change the corner color as needed */
 }
+
+.custom-line:before {background: blue;}

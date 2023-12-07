@@ -3,7 +3,7 @@ import Link from 'next/link';
 import './Contact.scss'
 const Contact = () => {
   return (
-    <div  className='z-10 contact-form w-screen h-full' id='contact'>
+    <div  className='z-10 contact-form w-screen h-full'>
       <div className="container">
         <div className="inner">
           <div className="panel panel-left">
