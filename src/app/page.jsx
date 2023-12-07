@@ -34,7 +34,7 @@ export default function Home() {
 						scrub: 1,
 						// snap: 1 / (panels.length - 1),
 						end: () => "+=" + slider.current.offsetWidth,
-						markers:true,
+						// markers:true,
 					}
 				});
 			});
@@ -74,7 +74,7 @@ export default function Home() {
 				t1.to(".content", { width: "100%", ease: Expo.easeInOut, duration: 0.3 });
 				setTimeout(() => {
 					setShowHeader(true)
-				}, 1000);
+				}, 500);
 			},
 		});
 		t1.to(".follow", {

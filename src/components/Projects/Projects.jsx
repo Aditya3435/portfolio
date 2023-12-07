@@ -90,9 +90,10 @@ function Projects() {
         ScrollTrigger.create({
           trigger: headline,
           start: "top 100%",
-          end: "bottom 60%",
+          end: "+=150px 70%",
           animation: animation,
           scrub: true,
+        //   markers:true,
         });
       });
 
@@ -139,7 +140,7 @@ function Projects() {
           <div className="desktopPhotos">
             {contentData.map((item) => (
               <a
-                className={`desktopPhoto ${item.img}`}
+                className={`desktopPhoto ${item.img} hover:brightness-75`}
                 target="_blank"
                 href={item.link}
                 key={item.id}

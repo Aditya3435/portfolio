@@ -44,11 +44,11 @@
 
 
 .desktopPhotos {
-	width:40vw;
-    height: 40vw;
+	width:35vw;
+    height: 35vw;
 	border-radius:20px;
 	position:absolute; // relative
-    bottom: -390%;
+    bottom: -385%;
 	overflow :hidden;
 	// box-shadow:4px 4px 4px rgba(0, 0, 0, 0.4);
 }
@@ -60,7 +60,7 @@
 }
 .right-relative {
     position: relative;
-    top: 10%;
+    top: 0%;
 }
 .opencv {
     background: url('/images/projects/opencv.png');
@@ -88,6 +88,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+	transition: all 0.3s;
     &:last-child {
         background-position: left;
     }
