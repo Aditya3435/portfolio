@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState, useLayoutEffect } from 'react'
 import Header from '@/components/Header/Header'
 import Navbar from '@/components/Navbar/Navbar';
 import CursorPointer from '@/components/Cursor';
@@ -11,15 +11,36 @@ import { ThemeProvider } from '@/components/Theme/Theme';
 import ThemeToggle from '@/components/ToggleTheme/ToggleTheme';
 import Projects from '@/components/Projects/Projects';
 import Contact from '@/components/Contact/Contact';
-gsap.registerPlugin(CSSPlugin);
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 export default function Home() {
-
+	const component = useRef();
+	const slider = useRef();
+	useLayoutEffect(() => {
+		let ctx = gsap.context(() => {
+		  let panels = gsap.utils.toArray(".scroll-panel");
+		  gsap.to(panels, {
+			xPercent: -100 * (panels.length - 1),
+			ease: "none",
+			scrollTrigger: {
+			  trigger: slider.current,
+			  pin: true,
+			  scrub: 1,
+			  snap: 1 / (panels.length - 1),
+			  end: () => "+=" + slider.current.offsetWidth
+			}
+		  });
+		}, component);
+		return () => ctx.revert();
+	  },);
+	const pageContainer = useRef(null);
 	useEffect(() => {
 		AOS.init({
 			once: false,
 		});
-
+		
 	}, [])
 	// useEffect(() => {
 	// (
@@ -79,7 +100,7 @@ export default function Home() {
 	}, [x, y])
 	return (
 		<ThemeProvider>
-			<main>
+			<main ref={component}>
 				{/* <Loading>
 					<Follow className="follow"></Follow>
 					<ProgressBar
@@ -94,17 +115,22 @@ export default function Home() {
 				{
 					showHeader ?
 						<Content className="content"> */}
-							<Navbar />
-							<Header />
-							<About />
-							<Projects/>
-							<Contact/>
-							{/* <CursorPointer
+				<Navbar />
+				<Header />
+				<About />
+				<Projects />
+				<div className='page-container' ref={slider}>
+					<div className='scroll-panel h-full w-screen bg-red-900'></div>
+					<div className='scroll-panel'><Contact /></div>
+				</div>
+
+				
+				{/* <CursorPointer
 								x={x}
 								y={y}
 							/> */}
-							<ThemeToggle />
-						{/* </Content> : ''} */}
+				<ThemeToggle />
+				{/* </Content> : ''} */}
 
 
 			</main>

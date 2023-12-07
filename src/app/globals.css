@@ -18,6 +18,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: #fff;
 }
+
+
 body {
   background-color: var(--background-end-rgb);
   color: var(--foreground-rgb);
@@ -27,6 +29,13 @@ main {
   overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: 'Lexend', sans-serif;
+}
+
+main .page-container {
+  width: 200%;
+  height: 100vh;
+  display: flex;
+	flex-wrap: nowrap;
 }
 /* Track */
 ::-webkit-scrollbar {

@@ -3,18 +3,7 @@ import Link from 'next/link';
 import './Contact.scss'
 const Contact = () => {
   return (
-    <div id='contact' className='z-10 contact-form'>
-
-      {/* <div className="nav">
-        <Link href="#">
-          <a className="menu-activator"><i className="ion-ios-more"></i></a>
-        </Link>
-        <i className="ion-cube"></i>
-        <Link href="#">
-          <a className="white link"><i className="ion-ios-redo-outline"></i><i className="ion-ios-redo hidden"></i></a>
-        </Link>
-      </div> */}
-
+    <div id='contact' className='z-10 contact-form' >
       <div className="container">
         <div className="inner">
           <div className="panel panel-left">

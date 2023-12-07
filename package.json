@@ -22,6 +22,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-locomotive-scroll": "^0.2.2",
+    "react-vertical-timeline-component": "^3.6.0",
     "sass": "^1.69.5",
     "styled-components": "^6.1.1"
   },

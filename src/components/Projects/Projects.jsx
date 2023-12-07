@@ -73,27 +73,27 @@ function Projects() {
 
     }, [])
     return (
-        <div className='border-b-2 border-gray-50' id='projects'>
+        <div className='' id='projects'>
             <div className="gallery">
                 <div className="left">
                     <div className="desktopContent">
-                        <div className="desktopContentSection" ref={ref0}>
+                        <div className="desktopContentSection" ref={ref0} data-aos='fade-up'>
                             <h1>Attendance system using face recognition</h1>
                             <p>This project utilizes openCV&apos;s face recognition model to create an advanced attendance system. It captures user photos, automatically updating attendance records in a spreadsheet. With a user-friendly interface, emphasis on security, and continuous improvement, it offers a reliable and efficient solution for organizations seeking streamlined attendance tracking.</p>
                         </div>
-                        <div className="desktopContentSection"  ref={ref1}>
+                        <div className="desktopContentSection"  ref={ref1} data-aos='fade-up'>
                             <h1>Nimbus Technical Fest Website</h1>
                             <p>This college technical fest website, developed using React.js, SASS, Canvajs, ThreeJs, and pnpm packages, boasts an engaging design featuring captivating animations across six distinct pages. Each page is thoughtfully crafted with a unique layout style, contributing to an immersive and visually appealing user experience. </p>
                         </div>
-                        <div className="desktopContentSection" ref={ref2}>
+                        <div className="desktopContentSection" ref={ref2} data-aos='fade-up'>
                             <h1>Hillffair Cultural Fest Website</h1>
                             <p>Made this cultural fest website with my team using Reactjs showcasing NIT hamirpur cultural fest thoroughly.</p>
                         </div>
-                        <div className="desktopContentSection" ref={ref3}>
+                        <div className="desktopContentSection" ref={ref3} data-aos='fade-up'>
                             <h1>Pomodoro Web App</h1>
                             <p>To enhance productivity, I developed a Pomodoro timer web app using HTML, CSS, and JavaScript. The app offers the flexibility of setting time manually or using default settings, catering to individual preferences. Additionally, it provides three distinct color themes to optimize the user experience, making it a versatile and visually appealing tool for efficient time management.</p>
                         </div>
-                        <div className="desktopContentSection" ref={ref4}>
+                        <div className="desktopContentSection" ref={ref4} data-aos='fade-up'>
                             <h1>Password Generator using Terminal</h1>
                             <p>Scripted a password generator for the terminal using a Bash script, ensuring ease of use, and 100% secure random password by providing clear instructions in a well-documented README, guiding users through the installation and usage of the script..</p>
                         </div>
