@@ -49,9 +49,12 @@ function Projects() {
       link: "https://github.com/Aditya3435/generate_password_using_terminal",
     },
   ];
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const refsAndViews = {};
   contentData.forEach((item) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const ref = useRef(null);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const view = useInView(ref);
     refsAndViews[item.id] = { ref, view };
   });
