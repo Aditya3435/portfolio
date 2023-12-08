@@ -69,7 +69,8 @@ const Contact = () => {
       <div className="container">
         <div className="inner">
           <div className="panel panel-left">
-            <div className="panel-content">
+            <div className="panel-content relative"  data-aos="zoom-in">
+            <div className="absolute top-1/2 left-1/3 text-3xl text-foreground max-md:hidden">Feel free to drop a message :)</div>
               <div className="image-background"></div>
             </div>
           </div>
@@ -94,7 +95,7 @@ const Contact = () => {
                 </div>
 
                 <div className="group flex items-center justify-center gap-4">
-                  {<div className="text-background-end">{submitMessage}</div>}
+                  {<div className="text-background-end max-sm:text-foreground">{submitMessage}</div>}
                 <button type="submit" onClick={()=>handleSubmit()} className={`send-btn text-gray-900 border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${submitted && 'hidden'}`}>
                   Send
                 </button>

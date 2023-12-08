@@ -3,7 +3,7 @@
 }
 .gallery h1 {
 
-	font-size:3em;
+	font-size:2.8em;
     font-weight: bold;
     color: var(--teal);
 }
@@ -33,7 +33,7 @@
 
 .desktopContent {
 	margin:auto;
-	width:50%;
+	width:60%;
 }
 
 .desktopContentSection {
@@ -88,7 +88,7 @@
 	width:100%;
 	height:100%;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     &:last-child {
         background-position: left;

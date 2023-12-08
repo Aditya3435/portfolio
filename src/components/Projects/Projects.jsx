@@ -16,38 +16,43 @@ function Projects() {
         "This project utilizes openCV's face recognition model to create an advanced attendance system. It captures user photos, automatically updating attendance records in a spreadsheet. With a user-friendly interface, emphasis on security, and continuous improvement, it offers a reliable and efficient solution for organizations seeking streamlined attendance tracking.",
       img: "opencv",
       link: "https://github.com/Aditya3435/Attendance-System-using-Face-Recognition",
+      gitubLink: 'https://github.com/Aditya3435/Attendance-System-using-Face-Recognition'
     },
     {
       id: "1",
       title: "Nimbus Technical Fest Website",
       description:
-        "This college technical fest website, developed using React.js, SASS, Canvajs, ThreeJs, and pnpm packages, boasts an engaging design featuring captivating animations across six distinct pages. Each page is thoughtfully crafted with a unique layout style, contributing to an immersive and visually appealing user experience.",
+      "This college technical fest website, developed using React.js, SASS, Canvajs, ThreeJs, and pnpm packages, boasts an engaging design featuring captivating animations across six distinct pages. Each page is thoughtfully crafted with a unique layout style, contributing to an immersive and visually appealing user experience.",
       img: "nimbus",
       link: "https://festnimbus.nith.ac.in/",
+      gitubLink: 'https://github.com/pixonoids/Nimbus-2k23'
     },
     {
       id: "2",
       title: "Hillffair Cultural Fest Website",
       description:
-        "Made this cultural fest website with my team using Reactjs showcasing NIT hamirpur cultural fest thoroughly.",
+      "Made this cultural fest website with my team using Reactjs showcasing NIT hamirpur cultural fest thoroughly.",
       img: "hillffair",
       link: "https://www.hillffairnith.com/",
+      gitubLink: 'https://github.com/pixonoids/Hillfair-2022-Mirage'
     },
     {
       id: "3",
       title: "Pomodoro Web App",
       description:
-        "To enhance productivity, I developed a Pomodoro timer web app using HTML, CSS, and JavaScript. The app offers the flexibility of setting time manually or using default settings, catering to individual preferences. Additionally, it provides three distinct color themes to optimize the user experience, making it a versatile and visually appealing tool for efficient time management.",
+      "To enhance productivity, I developed a Pomodoro timer web app using HTML, CSS, and JavaScript. The app offers the flexibility of setting time manually or using default settings, catering to individual preferences. Additionally, it provides three distinct color themes to optimize the user experience, making it a versatile and visually appealing tool for efficient time management.",
       img: "pomodoro",
       link: "https://aditya3435.github.io/pomodoro-app/",
+      gitubLink: 'https://github.com/Aditya3435/pomodoro-app'
     },
     {
       id: "4",
       title: "Password Generator using Terminal",
       description:
-        "Scripted a password generator for the terminal using a Bash script, ensuring ease of use, and 100% secure random password by providing clear instructions in a well-documented README, guiding users through the installation and usage of the script.",
+      "Scripted a password generator for the terminal using a Bash script, ensuring ease of use, and 100% secure random password by providing clear instructions in a well-documented README, guiding users through the installation and usage of the script.",
       img: "password",
       link: "https://github.com/Aditya3435/generate_password_using_terminal",
+      gitubLink: 'https://github.com/Aditya3435/pomodoro-app'
     },
 
     // change desktopPhotos class bottom 77% to more if increase project
@@ -149,6 +154,7 @@ function Projects() {
               >
                 <h1>{item.title}</h1>
                 <p>{item.description}</p>
+                <a href={item.gitubLink} target="_blank" className="text-teal md:text-2xl md:mt-4"> Github Link</a>
               </div>
             ))}
           </div>
@@ -161,6 +167,7 @@ function Projects() {
                 <Image src={`/images/projects/${item.img}.png`} alt='project-photo' width={150} height={150}/>
                 <h1  data-aos='fade-up'>{item.title}</h1>
                 <p  data-aos='fade-up'>{item.description}</p>
+                <a href={item.gitubLink} target="_blank" className="text-teal md:text-2xl md:mt-4">  GitHub Link</a>
               </div>
             ))}
           </div>

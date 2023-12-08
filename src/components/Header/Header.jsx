@@ -129,7 +129,7 @@ function Header() {
 
   return (
     <main className=" h-screen flex flex-col w-screen" ref={ref} id="home">
-      {isInView ? (
+      {isInView && 
         <div className="m-auto flex flex-col gap-2">
           <motion.div
             initial="hidden"
@@ -177,10 +177,8 @@ function Header() {
             </a>
           </div>
         </div>
-      ) : (
-        ""
-      )}
-      <div className="scroll-down flex flex-col items-center origin-top-left">
+      }
+      <div className="scroll-down flex flex-col items-center origin-top-left -mt-4">
         <div className=" p-1 rounded-md pointer-events-none">Scroll Down</div>
         <KeyboardArrowDownIcon />
       </div>

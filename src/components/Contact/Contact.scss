@@ -254,12 +254,7 @@ $color_5: #000000;
 
     .group {
         position: relative;
-        margin: 2.5rem 0;
-        &:nth-child(4) {
-            label {
-                bottom: 0.5rem;
-            }
-        }
+        margin: 2rem 0;
         &:last-child {
             float: right;
         }
@@ -281,7 +276,7 @@ $color_5: #000000;
         -webkit-transition: 0.2s ease all;
     }
 
-    input {
+    input, textarea {
         font-size: 13px;
         height: 25px;
         padding: 10px 10px 10px 5px;
@@ -304,14 +299,18 @@ $color_5: #000000;
         }
 
         &:focus~label {
-            bottom: 25px;
+            bottom: 30px;
             font-size: 12px;
             color: $color_3;
             opacity: 1;
+            opacity: 1;
+            @media (max-width:600px) {
+                color: var(--foreground-rgb);
+            }
         }
 
         &:valid~label {
-            bottom: 25px;
+            bottom: 30px;
             font-size: 12px;
             color: $color_3;
             opacity: 1;
@@ -326,49 +325,9 @@ $color_5: #000000;
             color: var(--foreground-rgb);
         }
     }
-
-    textarea {
-        font-size: 13px;
-        height: 25px;
-        padding: 10px 10px 10px 5px;
-        display: block;
-        width: 300px;
-        border: none;
-        outline: none;
-        border-bottom: 1px solid var(--background-end-rgb);
-        @media (max-width:600px) {
-            border-bottom: 1px solid var(--foreground-rgb);
-            color: var(--foreground-rgb);
+        textarea {
+            overflow: hidden;
         }
-        color: $color_3;
-        background: rgba(0, 0, 0, 0);
-        opacity: 0.5;
-        transition: 0.2s ease;
-        height: 50px;
-
-        &:focus {
-            outline: none;
-            opacity: 1;
-        }
-
-        &:focus~label {
-            top: -10px;
-            font-size: 12px;
-            color: $color_3;
-            opacity: 1;
-            @media (max-width:600px) {
-                color: var(--foreground-rgb);
-            }
-        }
-
-        &:valid~label {
-            top: -10px;
-            font-size: 12px;
-            color: $color_3;
-            opacity: 1;
-        }
-    }
-
     
     .highlight {
         position: absolute;
@@ -380,7 +339,7 @@ $color_5: #000000;
         opacity: 0.5;
     }
 
-    a.send-btn {
+    button.send-btn {
         position: absolute;
         right: 2rem;
         transition: 0.2s ease;
