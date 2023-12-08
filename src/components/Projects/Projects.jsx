@@ -48,6 +48,25 @@ function Projects() {
       img: "password",
       link: "https://github.com/Aditya3435/generate_password_using_terminal",
     },
+
+    // change desktopPhotos class bottom 77% to more if increase project
+    // {
+    //   id: "5",
+    //   title: "Pomodoro Web App",
+    //   description:
+    //     "To enhance productivity, I developed a Pomodoro timer web app using HTML, CSS, and JavaScript. The app offers the flexibility of setting time manually or using default settings, catering to individual preferences. Additionally, it provides three distinct color themes to optimize the user experience, making it a versatile and visually appealing tool for efficient time management.",
+    //   img: "pomodoro",
+    //   link: "https://aditya3435.github.io/pomodoro-app/",
+    // },
+    // {
+    //   id: "6",
+    //   title: "Pomodoro Web App",
+    //   description:
+    //     "To enhance productivity, I developed a Pomodoro timer web app using HTML, CSS, and JavaScript. The app offers the flexibility of setting time manually or using default settings, catering to individual preferences. Additionally, it provides three distinct color themes to optimize the user experience, making it a versatile and visually appealing tool for efficient time management.",
+    //   img: "pomodoro",
+    //   link: "https://aditya3435.github.io/pomodoro-app/",
+    // },
+    
   ];
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const refsAndViews = {};
@@ -58,18 +77,22 @@ function Projects() {
     const view = useInView(ref);
     refsAndViews[item.id] = { ref, view };
   });
-
-  const inview =
-    refsAndViews["1"].view || refsAndViews["2"].view || refsAndViews["3"].view;
-
   useEffect(() => {
     const desktopPhotosElement = document.querySelector(".desktopPhotos");
+    const projectsCount = Object.keys(refsAndViews).length;
+    document.querySelector(":root").style.setProperty('--projectcount', projectsCount);
+  
+    // Combine the 'view' values of all refs except the first and last
+    const inview = Object.values(refsAndViews)
+      .slice(1, -1) // Exclude the first and last elements
+      .reduce((accumulator, { view }) => accumulator || view, false);
+  
     const { view: view0 } = refsAndViews["0"];
-    const { view: view4 } = refsAndViews["4"];
-
+  
     desktopPhotosElement.classList.toggle("right-fixed", inview);
-    desktopPhotosElement.classList.toggle("right-relative", !inview && view0);
-  }, [inview, refsAndViews]);
+    desktopPhotosElement.classList.toggle("right-relative", (!inview && view0));
+  }, [refsAndViews]);
+  
 
   useEffect(() => {
     const details = gsap.utils.toArray(
@@ -93,16 +116,14 @@ function Projects() {
         ScrollTrigger.create({
           trigger: headline,
           start: "top 100%",
-          end: "+=150px 70%",
+          end: "+=50px 50%",
           animation: animation,
           scrub: true,
-        //   markers:true,
+          // markers:true,
         });
       });
 
-      return () => {
-        console.log("mobile");
-      };
+      return () => {};
     });
   }, []);
   return (

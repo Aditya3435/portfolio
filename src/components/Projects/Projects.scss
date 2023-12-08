@@ -1,5 +1,8 @@
-
+:root {
+	--projectcount:1
+}
 .gallery h1 {
+
 	font-size:3em;
     font-weight: bold;
     color: var(--teal);
@@ -48,12 +51,11 @@
     height: 35vw;
 	border-radius:20px;
 	position:absolute; // relative
-    bottom: -385%;
+	bottom: calc((-77% * var(--projectcount)));
 	overflow :hidden;
-	// box-shadow:4px 4px 4px rgba(0, 0, 0, 0.4);
 }
 
-
+	
 .right-fixed {
     position: fixed;
     top: 15%;
@@ -88,10 +90,9 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-	transition: all 0.3s;
-    &:last-child {
-        background-position: left;
-    }
+    // &:last-child {
+    //     background-position: left;
+    // }
 }
 
 

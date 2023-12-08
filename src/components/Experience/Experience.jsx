@@ -1,8 +1,7 @@
 import React, { useRef } from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import AnchorIcon from '@mui/icons-material/Anchor';
-import 'react-vertical-timeline-component/style.min.css'
-import { inView, useInView } from 'framer-motion';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';import 'react-vertical-timeline-component/style.min.css'
+import { useInView } from 'framer-motion';
 function Experience() {
     const ref = useRef(null);
     const view = useInView(ref);
@@ -18,10 +17,10 @@ function Experience() {
                     contentArrowStyle={{ borderRight: '7px solid  var(--foreground-rgb)' }}
                     date="2011 - present"
                     iconStyle={{ background: 'var(--foreground-rgb)', color: 'var(--background-end-rgb)', borderColor: 'var(--background-end-rgb)', borderWidth: '2px' }}
-                    icon={<AnchorIcon />}
+                    icon={<BusinessCenterIcon/>}
                 >
-                    <h2 className="vertical-timeline-element-title">Coordinator</h2>
-                    <h4 className="vertical-timeline-element-subtitle"><a href='https://github.com/pixonoids'>Pixonoids</a></h4>
+                    <div className="vertical-timeline-element-title font-bold mt-2 mb-2">Coordinator</div>
+                    <a href='https://github.com/pixonoids' className='vertical-timeline-element-subtitle ' target='_blank'>Pixonoids</a>
                     <p>
                         Collaborated with the team to develop college fest websites and mentored fellow students in web development.
                     </p>
@@ -34,16 +33,16 @@ function Experience() {
                     contentArrowStyle={{ borderRight: '7px solid  var(--foreground-rgb)' }}
                     date="2011 - present"
                     iconStyle={{ background: 'var(--foreground-rgb)', color: 'var(--background-end-rgb)', borderColor: 'var(--background-end-rgb)', borderWidth: '2px' }}
-                    icon={<AnchorIcon />}
+                    icon={<BusinessCenterIcon />}
                 >
-                    <h2 className="vertical-timeline-element-title">Competitive Programmar</h2>
-                    <p>
-                        1. Solved 700+ problems on Leetcode
+                    <div className="vertical-timeline-element-title font-bold mt-2 mb-2">Competitive Programmar</div>
+                    <div className='mt-2'>
+                        1. Solved 700+ problems on <a href='https://leetcode.com/aditya3435/' target='_blank'>Leetcode</a>
                         <br />
-                        2. 3 star coder on Codechef
-                        <br />
-                        3. Pupil at codeforces (rating 1223)
-                    </p>
+                        2. 3 star coder on <a href='https://codechef.com/users/aditya3435' target='_blank'>Codechef</a>
+                        <br /> 
+                        3. Pupil at <a href='https://codeforces.com/profile/aditya3435' target='_blank'>Codeforces</a> (rating 1223)
+                    </div>
                 </VerticalTimelineElement>
 
             </VerticalTimeline>

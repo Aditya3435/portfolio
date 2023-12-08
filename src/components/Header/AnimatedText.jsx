@@ -53,7 +53,7 @@ const AnimatedCharacters = (props) => {
   return (
     <Tag>
       {words.map((word, index) => {
-        const fontSize = "7em";
+        const fontSize = "6.5em";
         return (
           // Wrap each word in the Wrapper component
           <Wrapper key={index}>
