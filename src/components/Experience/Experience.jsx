@@ -20,7 +20,7 @@ function Experience() {
                     icon={<BusinessCenterIcon/>}
                 >
                     <div className="vertical-timeline-element-title font-bold mt-2 mb-2">Coordinator</div>
-                    <a href='https://github.com/pixonoids' className='vertical-timeline-element-subtitle ' target='_blank'>Pixonoids</a>
+                    <a href='https://github.com/pixonoids' className='vertical-timeline-element-subtitle text-teal' target='_blank'>Pixonoids</a>
                     <p>
                         Collaborated with the team to develop college fest websites and mentored fellow students in web development.
                     </p>
@@ -37,11 +37,11 @@ function Experience() {
                 >
                     <div className="vertical-timeline-element-title font-bold mt-2 mb-2">Competitive Programmar</div>
                     <div className='mt-2'>
-                        1. Solved 700+ problems on <a href='https://leetcode.com/aditya3435/' target='_blank'>Leetcode</a>
+                        1. Solved 700+ problems on <a href='https://leetcode.com/aditya3435/' target='_blank' className='text-teal'>Leetcode</a>
                         <br />
-                        2. 3 star coder on <a href='https://codechef.com/users/aditya3435' target='_blank'>Codechef</a>
+                        2. 3 star coder on <a href='https://codechef.com/users/aditya3435' target='_blank' className='text-teal'>Codechef</a>
                         <br /> 
-                        3. Pupil at <a href='https://codeforces.com/profile/aditya3435' target='_blank'>Codeforces</a> (rating 1223)
+                        3. Pupil at <a href='https://codeforces.com/profile/aditya3435' target='_blank' className='text-teal'>Codeforces</a> (rating 1223)
                     </div>
                 </VerticalTimelineElement>
 

@@ -130,7 +130,7 @@ function Projects() {
 
   
   return (
-    <div className="mt-40" id="projects">
+    <div className="mt-20" id="projects">
       <div
         className=" text-7xl m-auto w-full flex justify-center font-bold first-letter:text-teal  max-sm:text-4xl"
         data-aos="fade-up"

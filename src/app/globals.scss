@@ -35,10 +35,9 @@ main {
   scroll-behavior: smooth;
   font-family: 'Lexend', sans-serif;
 }
-
 main .page-container {
   width: 200%;
-  height: 200vh;
+  height: 1650px;
   display: flex;
   flex-wrap: nowrap;
   @media (max-width:600px) {

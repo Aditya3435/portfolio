@@ -19,7 +19,7 @@ export default function NavFooter() {
     },
   ];
   return (
-    <div className="flex justify-between items-center  max-sm:flex-col-reverse max-sm:gap-8">
+    <div className="flex justify-between items-center max-sm:flex-col-reverse max-sm:gap-8">
       <div className="pointer-events-none created text-xl">
         Made with <span><FavoriteIcon/></span>
       </div>
