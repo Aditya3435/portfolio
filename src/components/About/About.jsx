@@ -119,7 +119,7 @@ export default function About() {
         >
           TECH STACK
         </div>
-        <div className="scroller overflow-auto  overflow-x-hidden">
+        <div className="scroller  overflow-x-hidden">
           {[1, 2, 3].map((el) => (
             <section key={el}>
               <div className="wrapper flex items-center gap-12 max-sm:gap-2 font-medium border-t-2 border-b-2">
@@ -138,7 +138,7 @@ export default function About() {
           ))}
         </div>
       </div>
-      <div className="tech-stack-container flex flex-col gap-8  mt-20 ">
+      <div className="tech-stack-container flex flex-col gap-8 mt-20">
         <div
           className=" text-7xl m-auto font-bold mt-24 max-sm:text-4xl"
           data-aos="fade-up"
@@ -147,7 +147,7 @@ export default function About() {
           CP PROFILES
         </div>
         <div
-          className={`scroller overflow-auto flex items-center gap-4 max-sm:gap-2 text-xl overflow-x-hidden `}
+          className={`scroller flex items-center gap-4 max-sm:gap-2 text-xl overflow-x-hidden `}
         >
           <a
             href="https://anilist.co/user/aditya3435/"

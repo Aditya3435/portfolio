@@ -90,9 +90,9 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    // &:last-child {
-    //     background-position: left;
-    // }
+    &:last-child {
+        background-position: left;
+    }
 }
 
 

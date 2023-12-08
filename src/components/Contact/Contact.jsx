@@ -6,10 +6,10 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState(""); 
-  
+  const [submitted, setSubmitted] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
   const handleInputChange = (e) => {
     const { id, value } = e.target;
-    console.log(e.target);
     if (id === "name") {
       setName(value);
     }
@@ -20,17 +20,48 @@ const Contact = () => {
       setMessage(value);
     }
   };
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
   
-  const handleSubmit = () => {
-    let details = {
-      name: name,
-      email: email,
-      message: message,
-    };
-    const newPostKey = push(child(ref(database), 'posts')).key;
-    const updates = {};
-    updates['/' + newPostKey] = details;
-    return  update(ref(database), updates);
+   const handleSubmit = async () => {
+   try {
+    if(name=="") {
+      setSubmitMessage("Please enter your name!")
+    }
+    else if(email == "" || !validateEmail(email)) {
+      setSubmitMessage("Please enter correct email!");
+    }
+    else if(message == "") {
+      setSubmitMessage("Message can't be empty!")
+    }
+    else {
+      let details = {
+        name: name,
+        email: email,
+        message: message,
+      };
+  
+      const newPostKey = push(child(ref(database), 'posts')).key;
+      const updates = {};
+      updates['/' + newPostKey] = details;
+  
+      await update(ref(database), updates);
+  
+      setName("");
+      setEmail("");
+      setMessage("");
+      setSubmitted(true);
+      setSubmitMessage("Messege sent ✅")
+    }
+    
+  } catch (error) {
+    console.error("Error submitting form:", error.message);
+  }
   };
   
   return (
@@ -52,7 +83,7 @@ const Contact = () => {
                   <label >Your name</label>
                 </div>
                 <div className="group">
-                  <input type="text" value={email} onChange={(e)=>handleInputChange(e)} id="email" required />
+                  <input type="email" value={email} onChange={(e)=>handleInputChange(e)} id="email" required />
                   <span className="highlight"></span>
                   <label>Your email</label>
                 </div>
@@ -62,8 +93,9 @@ const Contact = () => {
                   <label>Your Messege</label>
                 </div>
 
-                <div className="group">
-                <button type="submit" onClick={()=>handleSubmit()} className="send-btn text-gray-900 border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ">
+                <div className="group flex items-center justify-center gap-4">
+                  {<div className="text-background-end">{submitMessage}</div>}
+                <button type="submit" onClick={()=>handleSubmit()} className={`send-btn text-gray-900 border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${submitted && 'hidden'}`}>
                   Send
                 </button>
                 </div>
