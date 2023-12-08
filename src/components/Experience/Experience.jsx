@@ -3,7 +3,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';import 'react-vertical-timeline-component/style.min.css'
 import { useInView } from 'framer-motion';
 function Experience() {
-    const ref = useRef(null);
+    const ref = useRef(null); // 1263 x 563
     const view = useInView(ref);
     return (
         <div className='flex flex-col items-center justify-center gap-8 w-screen h-screen max-sm:mt-10' ref={ref}>
@@ -31,7 +31,7 @@ function Experience() {
                     lineColor="red"
                     contentStyle={{ background: 'var(--foreground-rgb)', color: 'var(--background-end-rgb' }}
                     contentArrowStyle={{ borderRight: '7px solid  var(--foreground-rgb)' }}
-                    date="2020 - present"
+                    date="2022 - present"
                     iconStyle={{ background: 'var(--foreground-rgb)', color: 'var(--background-end-rgb)', borderColor: 'var(--background-end-rgb)', borderWidth: '2px' }}
                     icon={<BusinessCenterIcon />}
                 >

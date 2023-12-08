@@ -48,6 +48,7 @@ export default function Home() {
 		AOS.init({
 			once: false,
 		});
+		setShowHeader(true)
 	}, []);
 
 
@@ -84,7 +85,8 @@ export default function Home() {
 						<ThemeToggle />
 					</div>
 				) : (
-					<Loading setShowHeader={setShowHeader}/>
+					// <Loading setShowHeader={setShowHeader}/>
+					''
 				)}
 				{showHeader && isDesktopOrLaptop && <CursorPointer x={x} y={y} />} 
 			</main>
