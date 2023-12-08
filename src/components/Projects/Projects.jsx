@@ -56,23 +56,6 @@ function Projects() {
     },
 
     // change desktopPhotos class bottom 77% to more if increase project
-    // {
-    //   id: "5",
-    //   title: "Pomodoro Web App",
-    //   description:
-    //     "To enhance productivity, I developed a Pomodoro timer web app using HTML, CSS, and JavaScript. The app offers the flexibility of setting time manually or using default settings, catering to individual preferences. Additionally, it provides three distinct color themes to optimize the user experience, making it a versatile and visually appealing tool for efficient time management.",
-    //   img: "pomodoro",
-    //   link: "https://aditya3435.github.io/pomodoro-app/",
-    // },
-    // {
-    //   id: "6",
-    //   title: "Pomodoro Web App",
-    //   description:
-    //     "To enhance productivity, I developed a Pomodoro timer web app using HTML, CSS, and JavaScript. The app offers the flexibility of setting time manually or using default settings, catering to individual preferences. Additionally, it provides three distinct color themes to optimize the user experience, making it a versatile and visually appealing tool for efficient time management.",
-    //   img: "pomodoro",
-    //   link: "https://aditya3435.github.io/pomodoro-app/",
-    // },
-    
   ];
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const refsAndViews = {};

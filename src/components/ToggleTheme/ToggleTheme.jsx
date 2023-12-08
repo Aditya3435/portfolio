@@ -10,10 +10,10 @@ const ThemeToggle = () => {
     root.style.setProperty('--foreground-rgb', isLightTheme ? '#0C0D0F' : '#fff');
     root.style.setProperty('--background-end-rgb', isLightTheme ? '#fff' : '#0C0D0F');
   }, [isLightTheme]);
-  
+
 
   const lightModeIcon = <LightModeIcon />;
-  const darkModeIcon = <DarkModeIcon />; 
+  const darkModeIcon = <DarkModeIcon />;
 
   const currentIcon = isLightTheme ? lightModeIcon : darkModeIcon;
 

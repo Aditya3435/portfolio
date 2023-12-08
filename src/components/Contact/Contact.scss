@@ -255,9 +255,6 @@ $color_5: #000000;
     .group {
         position: relative;
         margin: 2rem 0;
-        &:last-child {
-            float: right;
-        }
     }
     label {
         @media (max-width:600px) {
@@ -339,7 +336,7 @@ $color_5: #000000;
         opacity: 0.5;
     }
 
-    button.send-btn {
+    .send-btn {
         position: absolute;
         right: 2rem;
         transition: 0.2s ease;

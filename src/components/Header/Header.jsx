@@ -106,7 +106,7 @@ function Header() {
       });
       return () => ct1.revert();
     }
-  }, [isInView]);
+  }, [isDesktopOrLaptop, isInView]);
   useEffect(() => {
     if (isInView && isDesktopOrLaptop) {
       let ctx2 = gsap.context(() => {
@@ -125,7 +125,7 @@ function Header() {
       });
       return () => ctx2.revert();
     }
-  }, [isInView]);
+  }, [isDesktopOrLaptop, isInView]);
 
   return (
     <main className=" h-screen flex flex-col w-screen" ref={ref} id="home">
@@ -178,7 +178,7 @@ function Header() {
           </div>
         </div>
       }
-      <div className="scroll-down flex flex-col items-center origin-top-left -mt-4">
+      <div className="scroll-down flex flex-col items-center origin-top-left mb-8">
         <div className=" p-1 rounded-md pointer-events-none">Scroll Down</div>
         <KeyboardArrowDownIcon />
       </div>
