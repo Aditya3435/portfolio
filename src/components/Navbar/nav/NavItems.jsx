@@ -11,26 +11,26 @@ import Modal from './modal/Modal';
 const navItems = [
   {
     title: "Home",
-    href: "/",
+    href: "home",
     src: "home.png",
     color: "#003459"
 
   },
   {
     title: "About",
-    href: "#about",
+    href: "about",
     src: "about.png",
     color: "#118ab2"
   },
   {
     title: "Projects",
-    href: "#projects",
+    href: "projects",
     src: "projects.png",
     color: "#023047"
   },
   {
     title: "Contact Me",
-    href: "#contact",
+    href: "contact",
     src: "contact.png",
     color: "#3d5a80"
   },
@@ -48,7 +48,7 @@ export default function NavItems({setIsActive}) {
         <div onMouseLeave={() => { setSelectedIndicator(pathname) }} className={styles.nav}>
           {
             navItems.map((data, index) => {
-              return <Link key={index} data={{ ...data, index }} setModal={setModal} isActive={selectedIndicator == data.href} setSelectedIndicator={setSelectedIndicator}  setIsActive={setIsActive}></Link>
+              return <Link key={index} data={{ ...data, index }} setModal={setModal} isActive={selectedIndicator == data.href} setSelectedIndicator={setSelectedIndicator}  setIsActive={setIsActive} id={data.href}></Link>
             })
           }
         </div>

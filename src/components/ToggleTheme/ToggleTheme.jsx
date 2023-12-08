@@ -7,17 +7,10 @@ const ThemeToggle = () => {
 
   useEffect(() => {
     const root = document.querySelector(':root');
-
-    if (isLightTheme) {
-      root.style.setProperty('--foreground-rgb', '#0C0D0F');
-      root.style.setProperty('--background-start-rgb', '214, 219, 220');
-      root.style.setProperty('--background-end-rgb', '#fff');
-    } else {
-      root.style.setProperty('--foreground-rgb', '#fff');
-      root.style.setProperty('--background-start-rgb', '255, 0, 255');
-      root.style.setProperty('--background-end-rgb', '#0C0D0F');
-    }
+    root.style.setProperty('--foreground-rgb', isLightTheme ? '#0C0D0F' : '#fff');
+    root.style.setProperty('--background-end-rgb', isLightTheme ? '#fff' : '#0C0D0F');
   }, [isLightTheme]);
+  
 
   const lightModeIcon = <LightModeIcon />;
   const darkModeIcon = <DarkModeIcon />; 

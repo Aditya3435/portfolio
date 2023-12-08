@@ -3,8 +3,7 @@ import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
 import CursorPointer from "@/components/Cursor";
-import styled from "styled-components";
-import { gsap, Expo } from "gsap";
+import { gsap } from "gsap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ThemeProvider } from "@/components/Theme/Theme";
@@ -14,13 +13,13 @@ import Contact from "@/components/Contact/Contact";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Experience from "@/components/Experience/Experience";
 import About from "@/components/About/About";
+import Loading from "@/components/Loading/Loading";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
 	const component = useRef();
 	const slider = useRef();
-	const [counter, setCounter] = useState(0);
-	const [showHeader, setShowHeader] = useState(false); // false
+	const [showHeader, setShowHeader] = useState(true); // false
 	useLayoutEffect(() => {
 		if (showHeader) {
 			let ctx = gsap.context(() => {
@@ -47,43 +46,7 @@ export default function Home() {
 		});
 	}, []);
 
-	useEffect(() => {
-		const count = setInterval(() => {
-			setCounter((counter) =>
-				counter < 100
-					? counter + 1
-					: (clearInterval(count), setCounter(100), reveal())
-			);
-		}, 25);
-	}, []);
-	const reveal = () => {
-		const t1 = gsap.timeline({
-			onComplete: () => {
-				t1.to(".content", {
-					width: "100%",
-					ease: Expo.easeInOut,
-					duration: 0.3,
-				});
-				setTimeout(() => {
-					setShowHeader(true);
-				}, 500);
-			},
-		});
-		t1.to(".follow", {
-			width: "100%",
-			ease: Expo.easeInOut,
-			duration: 1.2,
-			delay: 0.7,
-		})
-			.to(".hide", { opacity: 0, duration: 0.3 })
-			.to(".hide", { display: "none", duration: 0.3 })
-			.to(".follow", {
-				height: "100%",
-				ease: Expo.easeInOut,
-				duration: 0.7,
-				delay: 0.5,
-			});
-	};
+
 	const [x, setX] = useState(0);
 	const [y, setY] = useState(0);
 
@@ -101,7 +64,7 @@ export default function Home() {
 		<ThemeProvider>
 			<main>
 				{showHeader ? (
-					<Content className="content" ref={component}>
+					<div className="content" ref={component}>
 						<Navbar />
 						<Header />
 						<About />
@@ -110,62 +73,17 @@ export default function Home() {
 							<div className="scroll-panel">
 								<Experience />
 							</div>
-							<div className="scroll-panel" id="contact">
+							<div className="scroll-panel">
 								<Contact />
 							</div>
 						</div>
 						<ThemeToggle />
-					</Content>
+					</div>
 				) : (
-					<Loading>
-						<Follow className="follow"></Follow>
-						<ProgressBar
-							className="hide"
-							id="progress-bar"
-							style={{ width: counter + "%" }}
-						></ProgressBar>
-						<Count id="count" className="hide">
-							{counter}%
-						</Count>
-					</Loading>
+					<Loading setShowHeader={setShowHeader}/>
 				)}
 				<CursorPointer x={x} y={y} />
 			</main>
 		</ThemeProvider>
 	);
 }
-const Loading = styled.div`
-  height: 100%;
-  width: 100%;
-  background-color: #0c0d0f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-`;
-const Follow = styled.div`
-  position: absolute;
-  background-color: #fff;
-  height: 2px;
-  width: 0;
-  left: 0;
-`;
-
-const ProgressBar = styled.div`
-  position: absolute;
-  left: 0;
-  background-color: #fff;
-  height: 2px;
-  width: 0;
-  transition: 0.4s ease-out;
-`;
-
-const Count = styled.p`
-  position: absolute;
-  font-size: 130px;
-  color: #fff;
-  transform: translateY(-15px);
-  font-weight: 500;
-`;
-const Content = styled.div``;

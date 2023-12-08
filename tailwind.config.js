@@ -6,12 +6,13 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: {
-      'background-end': 'var(--background-end-rgb)',
-      'foreground': 'var(--foreground-rgb)',
-      'teal':'#008080'
-    },
+   
     extend: {
+      colors: {
+        'background-end': 'var(--background-end-rgb)',
+        'foreground': 'var(--foreground-rgb)',
+        'teal':'#008080'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
