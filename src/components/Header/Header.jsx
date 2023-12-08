@@ -46,7 +46,7 @@ function Header() {
   const erase = () => {
     if (isInView) {
       if (charIndex > 0) {
-        cursorRef.current.classList.remove("blink");
+        if(cursorRef != null)cursorRef.current.classList.remove("blink");
         typedTextRef.current.textContent = textArray[textArrayIndex].slice(
           0,
           charIndex - 1
@@ -99,7 +99,7 @@ function Header() {
             trigger: element,
             start: "top 50%",
             end: "+=600px 50%",
-            scrub: 1, // Adjust the scrub value as needed
+            scrub: 1, 
             // markers: true,
           },
         });
@@ -118,7 +118,7 @@ function Header() {
             trigger: element,
             start: "top 50%",
             end: "+=600px 50%",
-            scrub: 1, // Adjust the scrub value as needed
+            scrub: 1,
             // markers: true,
           },
         });
