@@ -129,8 +129,8 @@ export default function About() {
                     className=" w-auto h-fit rounded-xl m-2 transition-all hover:scale-105"
                     src={`/images/techstack/languages/${el}_${el2}.png`}
                     alt="tech-stack"
-                    width={isDesktopOrLaptop ? 80 : 20}
-                    height={isDesktopOrLaptop ? 50 : 10}
+                    width={isDesktopOrLaptop ? 80 : 30}
+                    height={isDesktopOrLaptop ? 50 : 15}
                   />
                 ))}
               </div>
