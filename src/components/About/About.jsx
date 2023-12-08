@@ -9,7 +9,7 @@ const phrase =
   "I'm Aditya Maurya, a third-year student at NIT Hamirpur, Himachal Pradesh, India. I am Full Stack developer utilizing MERN stack developed websites for both cultural and technical festivals at my college. Additionally, I have built an \"Attendance System,\" leveraging OpenCV face recognition technology in Python. I am also an active competitive programmer, regularly participating in contests on Codeforces and various other platforms. My problem-solving skills are reflected in having successfully solved over 700 problems on LeetCode. Additionally, I'm also a expert typist on typeracer with the speed of 100+ words per minute.";
 
 export default function About() {
-  const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
+  const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 1224px)" });
 
   let refs = useRef([]);
   const body = useRef(null);
@@ -41,8 +41,9 @@ export default function About() {
             scrollTrigger: {
               trigger: section,
               scrub: 0.9,
-              start: `-1000px`,
-              end: `+=600px`,
+              start: `${isDesktopOrLaptop ? 'bottom -320%' : '-1000px top'}'`,
+              end: `+=` + (isDesktopOrLaptop? section.offsetWidth : '600px'),
+              // markers:true,
             },
           }
         );
@@ -54,8 +55,9 @@ export default function About() {
       scrollTrigger: {
         trigger: container.current,
         scrub: true,
-        start: `-600px`,
-        end: `+=500px`,
+        start: `${isDesktopOrLaptop ? 'bottom' : '-1000px -600px'}'`,
+        end: `+=` +  (isDesktopOrLaptop? container.current.offsetHeight : '500px'),
+        // markers:true,
       },
       opacity: 1,
       color: "#008080",
@@ -93,9 +95,9 @@ export default function About() {
 
   return (
     <div
-      className="flex flex-col justify-center items-center main-about border-t-2 border-gray"
-      ref={container}
       id="about"
+      ref={container}
+      className="flex flex-col justify-center items-center main-about"
     >
       <div
         className="  text-7xl mt-16 mb-4 font-bold max-sm:text-4xl"
@@ -127,8 +129,8 @@ export default function About() {
                     className=" w-auto h-fit rounded-xl m-2 transition-all hover:scale-105"
                     src={`/images/techstack/languages/${el}_${el2}.png`}
                     alt="tech-stack"
-                    width={isDesktopOrLaptop? 80: 20}
-                    height={isDesktopOrLaptop ?  50 : 10}
+                    width={isDesktopOrLaptop ? 80 : 20}
+                    height={isDesktopOrLaptop ? 50 : 10}
                   />
                 ))}
               </div>
@@ -175,7 +177,7 @@ export default function About() {
                       src={`/images/cp_profiles/${el2}.png`}
                       alt="cp-profile"
                       width={isDesktopOrLaptop ? 250 : 150}
-                      height={isDesktopOrLaptop ?  50 : 20}
+                      height={isDesktopOrLaptop ? 50 : 20}
                     />
                   </a>
                 ))}

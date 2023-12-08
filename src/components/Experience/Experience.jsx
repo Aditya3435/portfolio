@@ -15,7 +15,7 @@ function Experience() {
                     lineColor="red"
                     contentStyle={{ background: 'var(--foreground-rgb)', color: 'var(--background-end-rgb' }}
                     contentArrowStyle={{ borderRight: '7px solid  var(--foreground-rgb)' }}
-                    date="2011 - present"
+                    date="2021 - present"
                     iconStyle={{ background: 'var(--foreground-rgb)', color: 'var(--background-end-rgb)', borderColor: 'var(--background-end-rgb)', borderWidth: '2px' }}
                     icon={<BusinessCenterIcon/>}
                 >
@@ -31,7 +31,7 @@ function Experience() {
                     lineColor="red"
                     contentStyle={{ background: 'var(--foreground-rgb)', color: 'var(--background-end-rgb' }}
                     contentArrowStyle={{ borderRight: '7px solid  var(--foreground-rgb)' }}
-                    date="2011 - present"
+                    date="2020 - present"
                     iconStyle={{ background: 'var(--foreground-rgb)', color: 'var(--background-end-rgb)', borderColor: 'var(--background-end-rgb)', borderWidth: '2px' }}
                     icon={<BusinessCenterIcon />}
                 >
