@@ -69,18 +69,18 @@ export default function Home() {
 			<main>
 				{showHeader ? (
 					<div className="content" ref={component}>
-						 <Navbar />
-						 <Header />
-						<About />
-						<Projects />
+						<Navbar />
 						<div className="page-container" ref={slider}>
 							<div className="scroll-panel">
-								<Experience />
+								<Header />
 							</div>
 							<div className="scroll-panel">
-								<Contact />
+								<About />
 							</div>
 						</div>
+						<Projects/>
+						<Experience/>
+						<Contact/>
 						<ThemeToggle />
 					</div>
 				) : (

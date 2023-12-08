@@ -116,8 +116,8 @@ function Projects() {
           .set(allPhotos[index], { autoAlpha: 0 });
         ScrollTrigger.create({
           trigger: headline,
-          start: "top 100%",
-          end: "+=50px 50%",
+          start: "bottom 100%",
+          end: "+=80px 60%",
           animation: animation,
           scrub: true,
           // markers:true,
@@ -127,6 +127,8 @@ function Projects() {
       return () => {};
     });
   }, []);
+
+  
   return (
     <div className="mt-40" id="projects">
       <div
@@ -166,7 +168,7 @@ function Projects() {
           <div className="desktopPhotos">
             {contentData.map((item) => (
               <a
-                className={`desktopPhoto ${item.img} hover:brightness-75`}
+                className={`desktopPhoto ${item.img} hover:brightness-95`}
                 target="_blank"
                 href={item.link}
                 key={item.id}

@@ -90,11 +90,10 @@ function Header() {
 
   useEffect(() => {
     if (isInView && isDesktopOrLaptop) {
-      let ctx = gsap.context(() => {
+      let ct1 = gsap.context(() => {
         const element = typingText.current;
         gsap.to(element, {
-          x: "-50%",
-          y: "800%",
+          x: "50%",
           ease: "none",
           scrollTrigger: {
             trigger: element,
@@ -105,7 +104,7 @@ function Header() {
           },
         });
       });
-      return () => ctx.revert();
+      return () => ct1.revert();
     }
   }, [isInView]);
   useEffect(() => {
@@ -113,8 +112,7 @@ function Header() {
       let ctx2 = gsap.context(() => {
         const element = socialRef.current;
         gsap.to(element, {
-          x: "700%",
-          y: "1250%",
+          x: "600%",
           ease: "none",
           scrollTrigger: {
             trigger: element,
@@ -130,7 +128,7 @@ function Header() {
   }, [isInView]);
 
   return (
-    <main className=" h-screen flex flex-col" ref={ref} id="home">
+    <main className=" h-screen flex flex-col w-screen" ref={ref} id="home">
       {isInView ? (
         <div className="m-auto flex flex-col gap-2">
           <motion.div
