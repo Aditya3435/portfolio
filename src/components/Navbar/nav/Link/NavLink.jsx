@@ -6,7 +6,6 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 export default function NavLink({ data, isActive, setModal, setIsActive, id }) {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
-    // console.log(element);
     if(id=="contact") {
         setTimeout(() => {
             const scrollHeight = document.body.scrollHeight;
@@ -18,7 +17,7 @@ export default function NavLink({ data, isActive, setModal, setIsActive, id }) {
           }, 500);
     }
     else if (element) {
-      const offset = -500; // Adjust the offset as needed
+      const offset = -150; 
       const targetPosition = element.offsetTop + offset;
       setTimeout(() => {
         window.scrollTo({

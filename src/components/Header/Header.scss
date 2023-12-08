@@ -31,13 +31,9 @@ $font-family_1: var(--redressed);
 		background: transparent;
 	}
 }
-.typing-text {
-	font-size: 2em;
-}
 .typed-text {
 	color: $color_1;
 	font-family: $font-family_1;
-	font-size: 1.5em;
 }
 .cursortt {
 	display: inline-block;

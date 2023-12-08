@@ -12,11 +12,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { useMediaQuery } from "react-responsive";
 
 function Header() {
+  const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 1224px)" });
+
   const typedTextRef = useRef(null);
   const cursorRef = useRef(null);
   const ref = useRef(null);
+  const myName = useRef(null);
+  const typingText = useRef(null);
+  const socialRef = useRef(null);
   const isInView = useInView(ref);
   const placeholderText = [{ type: "heading1", text: "Aditya Maurya" }];
   const container = {
@@ -72,23 +78,6 @@ function Header() {
       }
     }
   };
-
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: document.documentElement,
-        scrub: true,
-        start: "top",
-        end: `+=${window.innerHeight}`,
-      },
-    });
-
-    timeline
-      .from(typedTextRef.current, { clipPath: `inset(15%)` })
-      .to(ref.current, { height: "400px" }, 0);
-  }, []);
   useEffect(() => {
     if (isInView) {
       type();
@@ -99,12 +88,58 @@ function Header() {
     };
   }, [isInView]);
 
+  useEffect(() => {
+    if (isInView && isDesktopOrLaptop) {
+      let ctx = gsap.context(() => {
+        const element = typingText.current;
+        gsap.to(element, {
+          x: "-50%",
+          y: "800%",
+          ease: "none",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 50%",
+            end: "+=600px 50%",
+            scrub: 1, // Adjust the scrub value as needed
+            // markers: true,
+          },
+        });
+      });
+      return () => ctx.revert();
+    }
+  }, [isInView]);
+  useEffect(() => {
+    if (isInView && isDesktopOrLaptop) {
+      let ctx2 = gsap.context(() => {
+        const element = socialRef.current;
+        gsap.to(element, {
+          x: "700%",
+          y: "1250%",
+          ease: "none",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 50%",
+            end: "+=600px 50%",
+            scrub: 1, // Adjust the scrub value as needed
+            // markers: true,
+          },
+        });
+      });
+      return () => ctx2.revert();
+    }
+  }, [isInView]);
+
   return (
     <main className=" h-screen flex flex-col" ref={ref} id="home">
       {isInView ? (
-        <div className="m-auto">
-          <motion.div initial="hidden" animate="visible" variants={container}>
-            <h1 data-aos="fade-right" className="text-2xl">
+        <div className="m-auto flex flex-col gap-2">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={container}
+            ref={myName}
+          >
+            <h1 data-aos="fade-right" className="text-2xl max-sm:text-xl">
               Hi, my name is
             </h1>
             <div className="container" data-scroll data-scroll-speed="0.7">
@@ -113,13 +148,23 @@ function Header() {
               })}
             </div>
           </motion.div>
-          <p className="typing-text -mt-4">
-            I am a <span className="typed-text" ref={typedTextRef}></span>
+          <p
+            className="typing-text text-4xl -mt-4 max-sm:text-xl mx-sm:mt-auto"
+            ref={typingText}
+          >
+            I am a{" "}
+            <span
+              className="typed-text text-5xl max-sm:text-xl mx-sm:mt-auto"
+              ref={typedTextRef}
+            ></span>
             <span className="cursor blink" ref={cursorRef}>
               &nbsp;
             </span>
           </p>
-          <div className="flex gap-8 mt-8">
+          <div
+            className="flex gap-8 mt-8 w-fit origin-top-left"
+            ref={socialRef}
+          >
             <a href="https://www.instagram.com/aditya_m3435/" target="_blank">
               <InstagramIcon />
             </a>
@@ -137,7 +182,7 @@ function Header() {
       ) : (
         ""
       )}
-      <div className="scroll-down flex flex-col items-center">
+      <div className="scroll-down flex flex-col items-center origin-top-left">
         <div className=" p-1 rounded-md pointer-events-none">Scroll Down</div>
         <KeyboardArrowDownIcon />
       </div>

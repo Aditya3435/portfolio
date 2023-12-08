@@ -44,6 +44,7 @@ $color_5: #000000;
     height: 100vh;
     width: 100vw;
 
+
     .container {
         width: 100vw;
         height: 100%;
@@ -91,6 +92,11 @@ $color_5: #000000;
                 box-sizing: border-box;
                 height: 100%;
                 width: 60%;
+                @media (max-width:600px) {
+                    transform: skew(0deg);
+                    width: 100%;
+                    float: none;
+                }
                 float: left;
                 transform: skew(-20deg);
 
@@ -101,6 +107,10 @@ $color_5: #000000;
                     left: 50%;
                     top: 50%;
                     transform: translateX(-50%) translateY(-50%) skew(20deg);
+                    @media (max-width:600px) {
+                        transform: translateX(0) translateY(0) skew(0);
+                        top: 0;
+                    }
                 }
             }
 
@@ -117,11 +127,15 @@ $color_5: #000000;
                         opacity: 0.95;
                     }
                 }
+                @media (max-width:600px) {
+                    display: none;
+                }
             }
 
             .panel.panel-right {
                 margin-right: -10%;
                 background: var(--foreground-rgb);
+               
 
                 .panel-content {
                     .form {
@@ -137,9 +151,21 @@ $color_5: #000000;
                         h1 {
                             display: block;
                             margin: -50px 0 45px 0;
-                            color: $color_3;
+                            color: var(--background-end-rgb);
+                            @media (max-width:600px) {
+                                color: var(--foreground-rgb);
+                            }
+                        }
+                        @media (max-width:600px) {
+                            left: 0;
+                            width: auto;
                         }
                     }
+                }
+                @media (max-width:600px) {
+                    margin-right: 0;
+                    background-color: var(--background-end-rgb);
+                    color: var(--foreground-rgb);
                 }
             }
         }
@@ -229,14 +255,19 @@ $color_5: #000000;
     .group {
         position: relative;
         margin: 2.5rem 0;
-
         &:nth-child(4) {
             label {
-                bottom: 1rem;
+                bottom: 0.5rem;
             }
+        }
+        &:last-child {
+            float: right;
         }
     }
     label {
+        @media (max-width:600px) {
+            color: var(--foreground-rgb);
+        }
         color: $color_3;
         font-size: 13px;
         font-weight: normal;
@@ -259,6 +290,9 @@ $color_5: #000000;
         border: none;
         outline: none;
         border-bottom: 1px solid var(--background-end-rgb);
+        @media (max-width:600px) {
+            border-bottom: 1px solid var(--foreground-rgb);
+        }
         color: $color_3;
         background: rgba(0, 0, 0, 0);
         opacity: 0.5;
@@ -288,6 +322,9 @@ $color_5: #000000;
             -moz-animation: inputHighlighter 0.3s ease;
             animation: inputHighlighter 0.3s ease;
         }
+        @media (max-width:600px) {
+            color: var(--foreground-rgb);
+        }
     }
 
     textarea {
@@ -299,6 +336,9 @@ $color_5: #000000;
         border: none;
         outline: none;
         border-bottom: 1px solid var(--background-end-rgb);
+        @media (max-width:600px) {
+            border-bottom: 1px solid var(--foreground-rgb);
+        }
         color: $color_3;
         background: rgba(0, 0, 0, 0);
         opacity: 0.5;
@@ -339,12 +379,15 @@ $color_5: #000000;
     a.send-btn {
         position: absolute;
         right: 2rem;
-        color: $color_4;
         transition: 0.2s ease;
-
         &:hover {
             color: $color_5;
             cursor: pointer;
+        }
+        @media (max-width:600px) {
+            position: static;
+            margin: auto;
+            color: var(--foreground-rgb);
         }
     }
 
@@ -357,6 +400,7 @@ $color_5: #000000;
         box-sizing: border-box;
         overflow-x: hidden;
         overflow-y: auto;
+      
         transition: all 0.33s ease;
 
         &::before {
@@ -370,5 +414,9 @@ $color_5: #000000;
             background: rgba(240, 240, 240, 0.0);
             transition: all 0.45s ease;
         }
+    }
+    @media (max-width:600px) {
+        color: var(--foreground-rgb);
+        background-color: var(--background-end-rgb);
     }
 }

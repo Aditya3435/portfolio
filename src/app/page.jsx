@@ -14,14 +14,18 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Experience from "@/components/Experience/Experience";
 import About from "@/components/About/About";
 import Loading from "@/components/Loading/Loading";
+import { useMediaQuery } from 'react-responsive';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
 	const component = useRef();
 	const slider = useRef();
-	const [showHeader, setShowHeader] = useState(true); // false
+	const [showHeader, setShowHeader] = useState(false); // false
+	const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
+  	// const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+
 	useLayoutEffect(() => {
-		if (showHeader) {
+		if (showHeader && isDesktopOrLaptop) {
 			let ctx = gsap.context(() => {
 				let panels = gsap.utils.toArray(".scroll-panel");
 				gsap.to(panels, {
@@ -65,8 +69,8 @@ export default function Home() {
 			<main>
 				{showHeader ? (
 					<div className="content" ref={component}>
-						<Navbar />
-						<Header />
+						 <Navbar />
+						 <Header />
 						<About />
 						<Projects />
 						<div className="page-container" ref={slider}>
@@ -82,7 +86,7 @@ export default function Home() {
 				) : (
 					<Loading setShowHeader={setShowHeader}/>
 				)}
-				<CursorPointer x={x} y={y} />
+				{showHeader && isDesktopOrLaptop && <CursorPointer x={x} y={y} />} 
 			</main>
 		</ThemeProvider>
 	);

@@ -6,4 +6,8 @@
     a {
         scale: 1.5;   
     }
+    @media (max-width:600px) {
+        gap: 2rem;
+    }
 }
+

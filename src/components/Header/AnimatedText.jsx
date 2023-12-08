@@ -53,7 +53,6 @@ const AnimatedCharacters = (props) => {
   return (
     <Tag>
       {words.map((word, index) => {
-        const fontSize = "6.5em";
         return (
           // Wrap each word in the Wrapper component
           <Wrapper key={index}>
@@ -61,11 +60,11 @@ const AnimatedCharacters = (props) => {
               return (
                 <span
                   style={{
-                    fontSize: fontSize,
                     overflow: "hidden",
                     display: "inline-block"
                   }}
                   key={index}
+                  className='text-header-size max-sm:text-4xl mx-sm:mt-auto'
                 >
                   <motion.span
                     
