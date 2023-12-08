@@ -338,6 +338,7 @@ $color_5: #000000;
         border-bottom: 1px solid var(--background-end-rgb);
         @media (max-width:600px) {
             border-bottom: 1px solid var(--foreground-rgb);
+            color: var(--foreground-rgb);
         }
         color: $color_3;
         background: rgba(0, 0, 0, 0);
@@ -355,6 +356,9 @@ $color_5: #000000;
             font-size: 12px;
             color: $color_3;
             opacity: 1;
+            @media (max-width:600px) {
+                color: var(--foreground-rgb);
+            }
         }
 
         &:valid~label {
