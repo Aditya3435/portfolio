@@ -69,7 +69,8 @@ const Contact = () => {
       <div className="container">
         <div className="inner">
           <div className="panel panel-left">
-            <div className="panel-content">
+            <div className="panel-content relative"  data-aos="zoom-in">
+            <div className="absolute top-1/2 left-1/3 text-3xl text-foreground max-md:hidden">Feel free to drop a message :)</div>
               <div className="image-background"></div>
             </div>
           </div>
