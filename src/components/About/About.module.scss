@@ -18,9 +18,17 @@ $color_1: rgb(105, 105, 105);
 		margin: 0px;
 		margin-right: 1.5vw;
 		font-weight: 700;
+		@media (max-width:600px) {
+			text-align: center;
+			font-size: 0.75rem;
+		}
 	}
 	span {
 		opacity: 0.5;
+	}
+	@media (max-width:600px) {
+		justify-content: center;
+		width: 90%;
 	}
 }
 .tech-stack-container {

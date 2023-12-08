@@ -48,7 +48,7 @@ function Loading({ setShowHeader }) {
         id="progress-bar"
         style={{ width: counter + "%" }}
       ></div>
-      <div id="count" className="hide absolute text-9xl text-white -translate-y-3">
+      <div id="count" className="hide absolute text-9xl max-sm:text-7xl text-white -translate-y-3">
         {counter}%
       </div>
     </div>

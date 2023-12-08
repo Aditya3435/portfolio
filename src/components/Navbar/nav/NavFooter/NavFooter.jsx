@@ -2,12 +2,12 @@ import styles from "./NavFooter.module.scss";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MagneticGSAP from "../../magneticGsap";
-
+import FavoriteIcon from '@mui/icons-material/Favorite';
 export default function NavFooter() {
   return (
-    <div className="flex justify-between">
-      <div className="pointer-events-none created">
-        Created by <span>Aditya</span>
+    <div className="flex justify-between items-center  max-sm:flex-col-reverse max-sm:gap-8">
+      <div className="pointer-events-none created text-xl">
+        Made with <span><FavoriteIcon/></span>
       </div>
       <div className={styles.footer}>
         <a href="https://github.com/Aditya3435">

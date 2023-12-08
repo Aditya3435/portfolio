@@ -6,7 +6,7 @@ function Experience() {
     const ref = useRef(null);
     const view = useInView(ref);
     return (
-        <div className='flex flex-col items-center justify-center gap-8 w-screen h-screen' ref={ref}>
+        <div className='flex flex-col items-center justify-center gap-8 w-screen h-screen max-sm:mt-10' ref={ref}>
             <h1 className='text-5xl font-bold mb-10'>Experience</h1>
             <VerticalTimeline lineColor='var(--foreground-rgb)'>
                 <VerticalTimelineElement

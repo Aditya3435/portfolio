@@ -13,6 +13,9 @@ module.exports = {
         'foreground': 'var(--foreground-rgb)',
         'teal':'#008080'
       },
+      fontSize: {
+        'header-size': '6.5em'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

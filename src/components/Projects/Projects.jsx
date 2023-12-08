@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { CSSPlugin } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useInView } from "framer-motion";
+import Image from "next/image";
 gsap.registerPlugin(CSSPlugin);
 
 function Projects() {
@@ -129,7 +130,7 @@ function Projects() {
   return (
     <div className="mt-40" id="projects">
       <div
-        className=" text-7xl m-auto w-full flex justify-center font-bold first-letter:text-teal"
+        className=" text-7xl m-auto w-full flex justify-center font-bold first-letter:text-teal  max-sm:text-4xl"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
@@ -154,9 +155,10 @@ function Projects() {
         <div className="right">
           <div className="mobileContent">
             {contentData.map((item) => (
-              <div className={`mobilePhoto ${item.img}`} key={item.id}>
-                <h1>{item.title}</h1>
-                <p>{item.description}</p>
+              <div className={`mobilePhoto`} key={item.id} data-aos='fade-up'>
+                <Image src={`/images/projects/${item.img}.png`} alt='project-photo' width={150} height={150}/>
+                <h1  data-aos='fade-up'>{item.title}</h1>
+                <p  data-aos='fade-up'>{item.description}</p>
               </div>
             ))}
           </div>

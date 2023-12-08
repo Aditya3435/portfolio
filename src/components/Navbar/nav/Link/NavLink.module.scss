@@ -6,6 +6,7 @@
     padding: 0.2rem 2rem;
     border-bottom: 1px solid rgb(153, 153, 153);
     transition: all 0.3s ease-in-out;
+
     &:hover {
         opacity: 0.8;
         scale: 1.01;
@@ -16,10 +17,16 @@
     &:first-child {
         border-top: 1px solid rgb(153, 153, 153);
     }
+      @media (max-width:600px) {
+        padding: 0.6rem 1rem;    
+    }
    
 }
 .rightArrow {
     transition: all 0.3s ease-in-out;
     scale: 2;
     margin-right: 1rem;
+    @media (max-width:600px) {
+        scale: 1;      
+    }
 }

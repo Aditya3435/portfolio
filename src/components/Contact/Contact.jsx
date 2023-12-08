@@ -3,7 +3,7 @@ import Link from "next/link";
 import "./Contact.scss";
 const Contact = () => {
   return (
-    <div className="z-10 contact-form w-screen h-full" id="contact">
+    <div className="z-10 contact-form w-screen h-full" id="contact ">
       <div className="container">
         <div className="inner">
           <div className="panel panel-left">
@@ -14,7 +14,7 @@ const Contact = () => {
           <div className="panel panel-right" >
             <div className="panel-content">
               <div className="form">
-                <h1 className="font-bold text-5xl">CONTACT ME</h1>
+                <h1 className="font-bold text-5xl max-sm:text-4xl max-sm:text-center">CONTACT ME</h1>
                 <div className="group">
                   <input type="text" required />
                   <span className="highlight"></span>
@@ -31,9 +31,11 @@ const Contact = () => {
                   <label>Your Messege</label>
                 </div>
 
+                <div className="group">
                 <a className="send-btn text-gray-900 border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ">
                   Send
                 </a>
+                </div>
               </div>
             </div>
           </div>
