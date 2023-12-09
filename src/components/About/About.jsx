@@ -21,7 +21,7 @@ export default function About() {
   useEffect(() => {
     document.scrollingElement.scrollTo(0, 0);
     handleScroll();
-    return () => {};
+    return () => { };
   }, []);
 
   const handleScroll = () => {
@@ -42,7 +42,7 @@ export default function About() {
               trigger: section,
               scrub: 0.9,
               start: `${isDesktopOrLaptop ? 'bottom -320%' : '-1000px top'}'`,
-              end: `+=` + (isDesktopOrLaptop? section.offsetWidth : '600px'),
+              end: `+=` + (isDesktopOrLaptop ? section.offsetWidth : '600px'),
               // markers:true,
             },
           }
@@ -56,7 +56,7 @@ export default function About() {
         trigger: container.current,
         scrub: true,
         start: `${isDesktopOrLaptop ? 'bottom' : '-1000px -600px'}'`,
-        end: `+=` +  (isDesktopOrLaptop? container.current.offsetHeight : '500px'),
+        end: `+=` + (isDesktopOrLaptop ? container.current.offsetHeight : '500px'),
         // markers:true,
       },
       opacity: 1,
@@ -166,8 +166,8 @@ export default function About() {
                       el2 == 1
                         ? "https://codeforces.com/profile/aditya3435/"
                         : el2 == 2
-                        ? "https://codechef.com/users/aditya3435"
-                        : "https://leetcode.com/aditya3435/"
+                          ? "https://codechef.com/users/aditya3435"
+                          : "https://leetcode.com/aditya3435/"
                     }
                     key={el2}
                     target="_blank"
