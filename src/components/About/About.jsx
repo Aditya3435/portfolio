@@ -55,7 +55,7 @@ export default function About() {
       scrollTrigger: {
         trigger: container.current,
         scrub: true,
-        start: `${isDesktopOrLaptop ? 'bottom' : '-1000px -600px'}'`,
+        start: `${isDesktopOrLaptop ? '100%' : '-1000px -600px'}'`,
         end: `+=` + (isDesktopOrLaptop ? container.current.offsetHeight : '500px'),
         // markers:true,
       },

@@ -32,7 +32,6 @@ const navItems = [
 export default function NavItems({setIsActive}) {
 
   const [modal, setModal] = useState({ active: false, index: 0 })
-
   return (
     <motion.div variants={menuSlide} initial="initial" animate="enter" exit="exit" className='menu'>
       <div className='body'>

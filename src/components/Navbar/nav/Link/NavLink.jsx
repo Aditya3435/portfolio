@@ -6,12 +6,13 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useMediaQuery } from "react-responsive";
 export default function NavLink({ data,  setModal, setIsActive }) {
   const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 1224px)" });
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
+  const {href} = data;
+  const scrollToSection = (href) => {
+    const element = document.getElementById(href);
      if (element) {
       const offset = -100; 
-      let targetPosition = element.offsetTop + offset + (isDesktopOrLaptop ? (id=="about"?2700:0) : 0);
-      if(id == "contact") targetPosition = document.body.scrollHeight;
+      let targetPosition = element.offsetTop + offset + (isDesktopOrLaptop ? (href=="about"?2700:0) : 0);
+      if(href == "contact") targetPosition = document.body.scrollHeight;
       setTimeout(() => {
         window.scrollTo({
             top: targetPosition,
@@ -21,7 +22,7 @@ export default function NavLink({ data,  setModal, setIsActive }) {
       }, 500);
     }
   };
-  const { title,  index, id } = data;
+  const { title,  index } = data;
 
   return (
     <Link
@@ -34,7 +35,7 @@ export default function NavLink({ data,  setModal, setIsActive }) {
         setModal({ active: false, index });
       }}
       onClick={() => {
-        scrollToSection(id);
+        scrollToSection(href);
         setIsActive(false);
       }}
       custom={index}
