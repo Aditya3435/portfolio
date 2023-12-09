@@ -35,16 +35,19 @@ main {
   scroll-behavior: smooth;
   font-family: 'Lexend', sans-serif;
 }
+
 main .page-container {
   width: 200%;
   height: 1650px;
   display: flex;
   flex-wrap: nowrap;
+
   @media (max-width:600px) {
     width: 100%;
     height: fit-content;
     display: block;
-  }}
+  }
+}
 
 /* Track */
 ::-webkit-scrollbar {

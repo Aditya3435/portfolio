@@ -52,32 +52,6 @@ $color_5: #000000;
         padding: 0;
         transition: all 0.3s ease;
     }
-
-    .menu-active {
-        .container {
-            transform: scale(0.9);
-        }
-
-        .nav {
-            a.menu-activator {
-                transform: rotate(90deg);
-            }
-
-            a.white {
-                color: $color_2;
-                transition: all 0.15s ease;
-            }
-        }
-
-        .menu {
-            left: 0;
-
-            &::before {
-                background: rgba(240, 240, 240, 0.9);
-            }
-        }
-    }
-
     .container {
         .inner {
             width: 100vw;
@@ -171,95 +145,11 @@ $color_5: #000000;
         }
     }
 
-    .nav {
-        position: fixed;
-        display: block;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 75px;
-        margin: 0;
-        padding: 0 25px;
-        box-sizing: border-box;
-        z-index: 99;
-
-        a {
-            display: inline-block;
-            height: 75px;
-            line-height: 75px;
-            font-size: 30px;
-            padding: 0 25px;
-            text-decoration: none;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.32s ease;
-        }
-
-        a.white {
-            color: $color_1;
-        }
-
-        a.link {
-            float: right;
-            position: relative;
-            text-align: center;
-
-            i {
-                position: absolute;
-                display: block;
-                transform: translateX(-50%);
-                transition: all 0.32s ease;
-            }
-
-            i.hidden {
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            &:hover {
-                i {
-                    opacity: 0;
-                    pointer-events: none;
-                }
-
-                i.hidden {
-                    opacity: 1;
-                    pointer-events: auto;
-                }
-            }
-        }
-
-        i.ion-cube {
-            display: inline-block;
-            position: absolute;
-            height: 75px;
-            line-height: 75px;
-            font-size: 35px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    }
-
-    & {
-        &:not(.menu-active) {
-            .nav {
-                a.menu-activator {
-                    &:hover {
-                        transform: rotate(90deg);
-                    }
-                }
-            }
-        }
-    }
-
     .group {
         position: relative;
         margin: 2rem 0;
     }
     label {
-        @media (max-width:600px) {
-            color: var(--foreground-rgb);
-        }
         color: $color_3;
         font-size: 13px;
         font-weight: normal;
@@ -271,7 +161,11 @@ $color_5: #000000;
         transition: 0.2s ease all;
         -moz-transition: 0.2s ease all;
         -webkit-transition: 0.2s ease all;
+        @media (max-width:600px) {
+            color: var(--foreground-rgb);
+        }
     }
+
 
     input, textarea {
         font-size: 13px;
@@ -311,6 +205,9 @@ $color_5: #000000;
             font-size: 12px;
             color: $color_3;
             opacity: 1;
+            @media (max-width:600px) {
+                color: var(--foreground-rgb);
+            }
         }
 
         &:focus~.highlight {
@@ -351,30 +248,6 @@ $color_5: #000000;
         }
     }
 
-    .menu {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        overflow-y: auto;
-      
-        transition: all 0.33s ease;
-
-        &::before {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: rgba(240, 240, 240, 0.0);
-            transition: all 0.45s ease;
-        }
-    }
     @media (max-width:600px) {
         color: var(--foreground-rgb);
         background-color: var(--background-end-rgb);

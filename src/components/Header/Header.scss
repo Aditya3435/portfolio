@@ -45,6 +45,6 @@ $font-family_1: var(--redressed);
 	animation: blink 0.8s ease-in-out infinite;
 }
 main {
-	.scroll-down { animation: float 2s ease-in-out infinite, appear 2s ease-in-out 1;
+	.scroll-down { animation: float 2s ease-in-out infinite, appear 2es ease-in-out 1;
 }
 }

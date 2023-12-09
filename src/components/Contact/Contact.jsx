@@ -84,7 +84,7 @@ const Contact = () => {
                   <label >Your name</label>
                 </div>
                 <div className="group">
-                  <input type="email" value={email} onChange={(e) => handleInputChange(e)} id="email" required />
+                  <input type="text" value={email}  pattern=".*" onChange={(e) => handleInputChange(e)} id="email" required />
                   <span className="highlight"></span>
                   <label>Your email</label>
                 </div>
