@@ -10,7 +10,7 @@ export default function NavFooter() {
       icon: <GitHubIcon />,
     },
     {
-      href: "https://drive.google.com/file/d/1atIKxurnTGdfWd4LaJpUhszy6qCklF45/view?usp=sharing",
+      href: "https://drive.google.com/file/d/1b9jUlytEqOYwDJW9mY3DRjrmsalGSWb8/view",
       icon: null,
     },
     {
