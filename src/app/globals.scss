@@ -35,6 +35,9 @@ main {
   scroll-behavior: smooth;
   font-family: 'Lexend', sans-serif;
 }
+.drop-shadow-teal {
+	filter: drop-shadow(1px 1px 1px var(--foreground-rgb));
+}
 
 main .page-container {
   width: 200%;

@@ -35,7 +35,9 @@ $color_1: rgb(105, 105, 105);
 		width: 90%;
 	}
 }
-
+.drop-shadow-teal {
+	filter: drop-shadow(2px 4px 6px var(--teal));
+}
 .tech-stack-container {
 	border-top: 2px solid var(--foreground-rgb);
 }

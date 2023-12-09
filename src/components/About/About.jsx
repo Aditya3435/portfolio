@@ -126,7 +126,7 @@ export default function About() {
                 {[1, 2, 3, 4, 5, 6].map((el2) => (
                   <Image
                     key={el2}
-                    className=" w-auto h-fit rounded-xl m-2 transition-all hover:scale-105"
+                    className=" w-auto h-fit rounded-xl m-2 transition-all hover:scale-105 drop-shadow-teal "
                     src={`/images/techstack/languages/${el}_${el2}.png`}
                     alt="tech-stack"
                     width={isDesktopOrLaptop ? 80 : 30}
@@ -159,7 +159,7 @@ export default function About() {
           </a>
           {[1].map((el) => (
             <section key={el}>
-              <div className="wrapper flex  items-center gap-12 max-sm:gap-4 text-xl font-medium max-sm:flex-col max-sm:justify-center max-sm:items-center">
+              <div className="wrapper flex items-center gap-12 max-sm:gap-4 text-xl font-medium max-sm:flex-col max-sm:justify-center max-sm:items-center">
                 {[1, 2, 3].map((el2) => (
                   <a
                     href={
@@ -173,7 +173,7 @@ export default function About() {
                     target="_blank"
                   >
                     <Image
-                      className="w-auto h-fit rounded-xl m-2 transition-all hover:scale-105 z-10"
+                      className="w-auto h-fit rounded-xl m-2 transition-all hover:scale-105 z-10 drop-shadow-teal"
                       src={`/images/cp_profiles/${el2}.png`}
                       alt="cp-profile"
                       width={isDesktopOrLaptop ? 250 : 150}
