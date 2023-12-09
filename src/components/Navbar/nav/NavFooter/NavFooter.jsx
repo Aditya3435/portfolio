@@ -1,8 +1,8 @@
-import styles from "./NavFooter.module.scss";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MagneticGSAP from "../../magneticGsap";
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import './NavFooter.scss'
 export default function NavFooter() {
   const links = [
     {
@@ -23,7 +23,7 @@ export default function NavFooter() {
       <div className="pointer-events-none created text-xl">
         Made with <span><FavoriteIcon/></span>
       </div>
-      <div className={styles.footer}>
+      <div className='footer'>
       {links.map((link, index) => (
         <a key={index} href={link.href} target="_blank">
           <MagneticGSAP>

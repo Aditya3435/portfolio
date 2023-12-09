@@ -1,8 +1,7 @@
-import styles from "./Navbar.module.scss";
 import { useEffect, useRef, useState } from "react";
 import Nav from "./nav/NavItems";
 import { AnimatePresence } from "framer-motion";
-
+import './Navbar.scss'
 export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
   const prevScrollPosition = useRef({ x: 0, y: 0 });
@@ -23,17 +22,17 @@ export default function Navbar() {
 
   return (
     <div>
-      <div className={styles.main}>
-        <div className={styles.header}>
+      <div className='main'>
+        <div className='header'>
           <div
             onClick={() => {
               setIsActive(!isActive);
             }}
-            className={styles.button}
+            className='button'
           >
             <div
-              className={`${styles.burger} ${
-                isActive ? styles.burgerActive : ""
+              className={`burger ${
+                isActive ? 'burgerActive' : ""
               }`}
             ></div>
           </div>

@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import styles from './Modal.module.scss';
+import './Modal.scss'
 import gsap from 'gsap';
 
 const scaleAnimation = {
@@ -41,12 +41,12 @@ export default function Modal({ modal, projects }) {
 
   return (
     <>
-      <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={styles.modalContainer}>
-        <div style={{ top: index * -100 + "%"}} className={styles.modalSlider}>
+      <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className='modalContainer'>
+        <div style={{ top: index * -100 + "%"}} className='modalSlider'>
           {
             projects.map((project, index) => {
-              const { src, color } = project
-              return <div className={styles.modal} style={{ backgroundColor: color }} key={`modal_${index}`}>
+              const { src } = project
+              return <div className='modal'key={`modal_${index}`}>
                 <Image
                   src={`/images/pages/${src}`}
                   width={300}
@@ -58,8 +58,8 @@ export default function Modal({ modal, projects }) {
           }
         </div>
       </motion.div>
-      <motion.div ref={cursor} className={styles.cursor} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
-      <motion.div ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>View</motion.div>
+      <motion.div ref={cursor} className='cursorModal' variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
+      <motion.div ref={cursorLabel} className='cursorLabel' variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>View</motion.div>
     </>
   )
 }

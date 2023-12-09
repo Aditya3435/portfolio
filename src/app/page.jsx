@@ -18,75 +18,75 @@ import { useMediaQuery } from "react-responsive";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const component = useRef();
-  const slider = useRef();
-  const [showHeader, setShowHeader] = useState(false); // false
-  const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 1224px)" });
-  useLayoutEffect(() => {
-    if (showHeader && isDesktopOrLaptop) {
-      let ctx = gsap.context(() => {
-        let panels = gsap.utils.toArray(".scroll-panel");
-        gsap.to(panels, {
-          xPercent: -100 * (panels.length - 1),
-          ease: "none",
-          scrollTrigger: {
-            trigger: slider.current,
-            pin: true,
-            scrub: 1,
-            // snap: 1 / (panels.length - 1),
-            end: () => "+=" + slider.current.offsetWidth,
-            // markers:true,
-          },
+    const component = useRef();
+    const slider = useRef();
+    const [showHeader, setShowHeader] = useState(false); // false
+    const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 1224px)" });
+    useLayoutEffect(() => {
+        if (showHeader && isDesktopOrLaptop) {
+            let ctx = gsap.context(() => {
+                let panels = gsap.utils.toArray(".scroll-panel");
+                gsap.to(panels, {
+                    xPercent: -100 * (panels.length - 1),
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: slider.current,
+                        pin: true,
+                        scrub: 1,
+                        // snap: 1 / (panels.length - 1),
+                        end: () => "+=" + slider.current.offsetWidth,
+                        // markers:true,
+                    },
+                });
+            });
+            return () => ctx.revert();
+        }
+    }, [component, showHeader]);
+    useEffect(() => {
+        AOS.init({
+            once: false,
         });
-      });
-      return () => ctx.revert();
-    }
-  }, [component, showHeader]);
-  useEffect(() => {
-    AOS.init({
-      once: false,
-    });
-    setShowHeader(true);
-  }, []);
+        setShowHeader(true);
+    }, []);
 
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
+    const [x, setX] = useState(0);
+    const [y, setY] = useState(0);
 
-  useEffect(() => {
-    const handleMouseMovement = (e) => {
-      setX(e.clientX);
-      setY(e.clientY);
-    };
-    document.addEventListener("mousemove", handleMouseMovement);
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMovement);
-    };
-  }, [x, y]);
-  return (
-    <ThemeProvider>
-      <main>
-        {showHeader ? (
-          <div className="content" ref={component}>
-            <Navbar />
-            <div className="page-container" ref={slider}>
-              <div className="scroll-panel">
-                <Header />
-              </div>
-              <div className="scroll-panel">
-                <About />
-              </div>
-            </div>
-            <Projects />
-            <Experience />
-            <Contact />
-            <ThemeToggle />
-          </div>
-        ) : (
-          // <Loading setShowHeader={setShowHeader}/>
-          ""
-        )}
-        {showHeader && isDesktopOrLaptop && <CursorPointer x={x} y={y} />}
-      </main>
-    </ThemeProvider>
-  );
+    useEffect(() => {
+        const handleMouseMovement = (e) => {
+            setX(e.clientX);
+            setY(e.clientY);
+        };
+        document.addEventListener("mousemove", handleMouseMovement);
+        return () => {
+            document.removeEventListener("mousemove", handleMouseMovement);
+        };
+    }, [x, y]);
+    return (
+        <ThemeProvider>
+            <main>
+                {showHeader ? (
+                    <div className="content" ref={component}>
+                        <Navbar />
+                        <div className="page-container" ref={slider}>
+                            <div className="scroll-panel">
+                                <Header />
+                            </div>
+                            <div className="scroll-panel">
+                                <About />
+                            </div>
+                        </div>
+                        <Projects />
+                        <Experience />
+                        <Contact />
+                        <ThemeToggle />
+                    </div>
+                ) : (
+                    // <Loading setShowHeader={setShowHeader}/>
+                    ""
+                )}
+                {showHeader && isDesktopOrLaptop && <CursorPointer x={x} y={y} />}
+            </main>
+        </ThemeProvider>
+    );
 }

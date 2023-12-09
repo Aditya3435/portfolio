@@ -13,6 +13,7 @@ $background-color_3: transparent;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	
 }
 .modalSlider {
 	height: 100%;
@@ -30,7 +31,7 @@ $background-color_3: transparent;
 		height: auto;
 	}
 }
-.cursor {
+.cursorModal {
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
@@ -60,4 +61,4 @@ $background-color_3: transparent;
 	font-weight: 300;
 	pointer-events: none;
 	background-color: $background-color_3;
-}
+}	
