@@ -1,4 +1,4 @@
-import styles from "./About.module.scss";
+import './About.scss'
 import { useRef, useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
@@ -94,29 +94,18 @@ export default function About() {
   };
 
   return (
-    <div
-      id="about"
-      ref={container}
-      className="flex flex-col justify-center items-center main-about"
-    >
-      <div
-        className="  text-7xl mt-16 mb-4 font-bold max-sm:text-4xl"
-        data-aos="fade-down"
-        data-aos-duration="1000"
-      >
+    <div id="about" ref={container} className="flex flex-col justify-center items-center main-about" >
+      <div className="  text-7xl mt-16 mb-4 font-bold max-sm:text-4xl" data-aos="fade-down" data-aos-duration="1000" >
         ABOUT ME
       </div>
-      <main className={styles.aboutMain}>
-        <div ref={body} className={styles.aboutBody}>
+      <main className='aboutMain'>
+        
+        <div ref={body} className='aboutBody'>
           {splitWords(phrase)}
         </div>
       </main>
       <div className="tech-stack-container flex flex-col gap-8">
-        <div
-          className=" text-7xl mt-8 mb-8 m-auto font-bold max-sm:text-4xl"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
+        <div className=" text-7xl mt-8 mb-8 m-auto font-bold max-sm:text-4xl" data-aos="fade-up" data-aos-duration="1000" >
           TECH STACK
         </div>
         <div className="scroller  overflow-x-hidden">
@@ -124,14 +113,7 @@ export default function About() {
             <section key={el}>
               <div className="wrapper flex items-center gap-12 max-sm:gap-2 font-medium border-t-2 border-b-2">
                 {[1, 2, 3, 4, 5, 6].map((el2) => (
-                  <Image
-                    key={el2}
-                    className=" w-auto h-fit rounded-xl m-2 transition-all hover:scale-105 drop-shadow-teal "
-                    src={`/images/techstack/languages/${el}_${el2}.png`}
-                    alt="tech-stack"
-                    width={isDesktopOrLaptop ? 80 : 30}
-                    height={isDesktopOrLaptop ? 50 : 15}
-                  />
+                  <Image key={el2} className=" w-auto h-fit rounded-xl m-2 transition-all hover:scale-105 drop-shadow-teal " src={`/images/techstack/languages/${el}_${el2}.png`} alt="tech-stack" width={isDesktopOrLaptop ? 80 : 30} height={isDesktopOrLaptop ? 50 : 15} />
                 ))}
               </div>
             </section>
@@ -139,59 +121,20 @@ export default function About() {
         </div>
       </div>
       <div className="tech-stack-container flex flex-col gap-8 mt-20">
-        <div
-          className=" text-7xl m-auto font-bold mt-24 max-sm:text-4xl"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          CP PROFILES
-        </div>
-        <div
-          className={`scroller flex items-center gap-4 max-sm:gap-2 text-xl overflow-x-hidden `}
-        >
-          <a
-            href="https://anilist.co/user/aditya3435/"
-            target="_blank"
-            title="anilist easter egg(please don't click :)"
-            className="absolute left-2 text-background-end"
-          >
-            Anilist
-          </a>
+        <div className=" text-7xl m-auto font-bold mt-24 max-sm:text-4xl" data-aos="fade-up" data-aos-duration="1000" > CP PROFILES </div>
+        <div className={`scroller flex items-center gap-4 max-sm:gap-2 text-xl overflow-x-hidden `} >
+          <a href="https://anilist.co/user/aditya3435/" target="_blank" title="anilist easter egg(please don't click :)" className="absolute left-2 text-background-end" >Anilist</a>
           {[1].map((el) => (
             <section key={el}>
               <div className="wrapper flex items-center gap-12 max-sm:gap-4 text-xl font-medium max-sm:flex-col max-sm:justify-center max-sm:items-center">
                 {[1, 2, 3].map((el2) => (
-                  <a
-                    href={
-                      el2 == 1
-                        ? "https://codeforces.com/profile/aditya3435/"
-                        : el2 == 2
-                          ? "https://codechef.com/users/aditya3435"
-                          : "https://leetcode.com/aditya3435/"
-                    }
-                    key={el2}
-                    target="_blank"
-                  >
-                    <Image
-                      className="w-auto h-fit rounded-xl m-2 transition-all hover:scale-105 z-10 drop-shadow-teal"
-                      src={`/images/cp_profiles/${el2}.png`}
-                      alt="cp-profile"
-                      width={isDesktopOrLaptop ? 250 : 150}
-                      height={isDesktopOrLaptop ? 50 : 20}
-                    />
-                  </a>
+                  <a href={el2 == 1 ? "https://codeforces.com/profile/aditya3435/" : el2 == 2 ? "https://codechef.com/users/aditya3435" : "https://leetcode.com/aditya3435/"} key={el2} target="_blank" >
+                    <Image className="w-auto h-fit rounded-xl m-2 transition-all hover:scale-105 z-10 drop-shadow-teal" src={`/images/cp_profiles/${el2}.png`} alt="cp-profile" width={isDesktopOrLaptop ? 250 : 150} height={isDesktopOrLaptop ? 50 : 20} /> </a>
                 ))}
               </div>
             </section>
           ))}
-          <a
-            href="https://www.instagram.com/am_proton/"
-            target="_blank"
-            title="am_proton easter egg(please don't click)"
-            className="absolute right-2 text-background-end max-sm:hidden"
-          >
-            am_proton
-          </a>
+          <a href="https://www.instagram.com/am_proton/" target="_blank" title="am_proton easter egg(please don't click)" className="absolute right-2 text-background-end max-sm:hidden" > am_proton </a>
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
-import styles from "./NavLink.module.scss";
+import "./NavLink.scss";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { slide, scale } from "../../anim";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useMediaQuery } from "react-responsive";
-export default function NavLink({ data, isActive, setModal, setIsActive, id }) {
+export default function NavLink({ data,  setModal, setIsActive }) {
   const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 1224px)" });
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -21,12 +21,12 @@ export default function NavLink({ data, isActive, setModal, setIsActive, id }) {
       }, 500);
     }
   };
-  const { title, href, index } = data;
+  const { title,  index, id } = data;
 
   return (
     <Link
       href=""
-      className={styles.link}
+      className='link'
       onMouseEnter={() => {
         setModal({ active: true, index });
       }}
@@ -44,7 +44,7 @@ export default function NavLink({ data, isActive, setModal, setIsActive, id }) {
       exit="exit"
     >
       <div>{title}</div>
-      <div className={styles.rightArrow}>
+      <div className='rightArrow'>
         <ArrowForwardIcon />
       </div>
     </Link>
