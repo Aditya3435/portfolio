@@ -147,7 +147,7 @@ function Projects() {
           <div className="mobileContent">
             {contentData.map((item) => (
               <div className={`mobilePhoto`} key={item.id} data-aos='fade-up'>
-                <Image src={`/images/projects/${item.img}.png`} alt='project-photo' width={150} height={150}/>
+                <a href={item.link} target="_blank"><Image src={`/images/projects/${item.img}.png`} alt='project-photo' width={150} height={150}/></a>
                 <h1  data-aos='fade-up'>{item.title}</h1>
                 <p  data-aos='fade-up'>{item.description}</p>
                 <a href={item.gitubLink} target="_blank" className="text-teal md:text-2xl md:mt-4">  GitHub Link</a>
