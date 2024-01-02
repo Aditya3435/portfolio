@@ -122,14 +122,14 @@ export default function About() {
       </div>
       <div className="tech-stack-container flex flex-col gap-8 mt-20">
         <div className=" text-7xl m-auto font-bold mt-24 max-sm:text-4xl" data-aos="fade-up" data-aos-duration="1000" > CP PROFILES </div>
-        <div className={`scroller flex items-center gap-4 max-sm:gap-2 text-xl overflow-x-hidden `} >
+        <div className={`scroller flex items-center justify-center gap-4 max-sm:gap-2 text-xl overflow-x-hidden `} >
           <a href="https://anilist.co/user/aditya3435/" target="_blank" title="anilist easter egg(please don't click :)" className="absolute left-2 text-background-end" >Anilist</a>
           {[1].map((el) => (
             <section key={el}>
               <div className="wrapper flex items-center gap-12 max-sm:gap-4 text-xl font-medium max-sm:flex-col max-sm:justify-center max-sm:items-center">
                 {[1, 2, 3].map((el2) => (
                   <a href={el2 == 1 ? "https://codeforces.com/profile/aditya3435/" : el2 == 2 ? "https://codechef.com/users/aditya3435" : "https://leetcode.com/aditya3435/"} key={el2} target="_blank" >
-                    <Image className="w-auto h-fit rounded-xl m-2 transition-all hover:scale-105 z-10 drop-shadow-teal" src={`/images/cp_profiles/${el2}.png`} alt="cp-profile" width={isDesktopOrLaptop ? 250 : 150} height={isDesktopOrLaptop ? 50 : 20} /> </a>
+                    <Image className="w-auto h-fit rounded-xl m-2 transition-all hover:scale-105 z-10 drop-shadow-teal" src={`/images/cp_profiles/${el2}.png`} alt="cp-profile" width={isDesktopOrLaptop ? 250 : 100} height={isDesktopOrLaptop ? 50 : 10} /> </a>
                 ))}
               </div>
             </section>
