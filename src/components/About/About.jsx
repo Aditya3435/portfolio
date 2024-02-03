@@ -6,11 +6,47 @@ import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 gsap.registerPlugin(ScrollTrigger);
 const phrase =
-  "I'm Aditya Maurya, a third-year student at NIT Hamirpur, Himachal Pradesh, India. I am Full Stack developer utilizing MERN stack developed websites for both cultural and technical festivals at my college. Additionally, I have built an \"Attendance System,\" leveraging OpenCV face recognition technology in Python. I am also an active competitive programmer, regularly participating in contests on Codeforces and various other platforms. My problem-solving skills are reflected in having successfully solved over 700 problems on LeetCode. Additionally, I'm also a expert typist on typeracer with the speed of 100+ words per minute.";
+  "I'm Aditya Maurya, a third-year student at NIT Hamirpur, Himachal Pradesh, India. I am Full Stack develope,r utilizing MERN stack Developed websites for both cultural and technical festivals at my college. Additionally, I have built an \"Attendance System,\" leveraging OpenCV face recognition technology in Python. I am also an active competitive programmer, regularly participating in contests on Codeforces and various other platforms. My problem-solving skills are reflected in having successfully solved over 700 problems on LeetCode. Additionally, I'm also a expert typist on typeracer with the speed of 100+ words per minute.";
 
 export default function About() {
   const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 1224px)" });
+  const CPProfiles = [
+    {
+      "Title": [
+        {
+          "text": "Pupil",
+          "color": "text-green-500"
+        },
+        {
+          "text": " at Codeforces (max. Rating 1338)"
+        }
+      ]
+    },
+    {
+      "Title": [
+        {
+          "text": "3 ⭐ at Codechef",
+          "color": "text-blue-500"
+        },
+        {
+          "text": " (max. Rating 1701)"
+        }
+      ]
+    },
+    {
+      "Title": [
+        {
+          "text": "Leetcode",
+          "color": "text-orange-500"
+        },
+        {
+          "text": " (max. Rating 1698)"
+        }
+      ]
+    }
+    
 
+  ]
   let refs = useRef([]);
   const body = useRef(null);
   const container = useRef(null);
@@ -122,14 +158,18 @@ export default function About() {
       </div>
       <div className="tech-stack-container flex flex-col gap-8 mt-20">
         <div className=" text-7xl m-auto font-bold mt-24 max-sm:text-4xl" data-aos="fade-up" data-aos-duration="1000" > CP PROFILES </div>
-        <div className={`scroller flex items-center justify-center gap-4 max-sm:gap-2 text-xl overflow-x-hidden `} >
+        <div className={`scroller flex items-center justify-center gap-4 max-sm:gap-2 text-xl  `} >
           <a href="https://anilist.co/user/aditya3435/" target="_blank" title="anilist easter egg(please don't click :)" className="absolute left-2 text-background-end" >Anilist</a>
           {[1].map((el) => (
             <section key={el}>
-              <div className="wrapper flex items-center gap-12 max-sm:gap-4 text-xl font-medium max-sm:flex-col max-sm:justify-center max-sm:items-center">
+              <div className="wrapper flex items-center  gap-12 max-sm:gap-4 text-xl font-medium max-sm:flex-col max-sm:justify-center max-sm:items-center">
                 {[1, 2, 3].map((el2) => (
-                  <a href={el2 == 1 ? "https://codeforces.com/profile/aditya3435/" : el2 == 2 ? "https://codechef.com/users/aditya3435" : "https://leetcode.com/aditya3435/"} key={el2} target="_blank" >
-                    <Image className="w-auto h-fit rounded-xl m-2 transition-all hover:scale-105 z-10 drop-shadow-teal" src={`/images/cp_profiles/${el2}.png`} alt="cp-profile" width={isDesktopOrLaptop ? 250 : 100} height={isDesktopOrLaptop ? 50 : 10} /> </a>
+                  <a className="flex flex-col justify-center" href={el2 == 1 ? "https://codeforces.com/profile/aditya3435/" : el2 == 2 ? "https://codechef.com/users/aditya3435" : "https://leetcode.com/aditya3435/"} key={el2} target="_blank" >
+                    <p className="text-center mb-4" >{CPProfiles[el2 - 1].Title.map((el3, index) => (
+                      <span key={index} className={el3.color ? el3.color : "text-foreground"} >{el3.text}</span>
+                    ))}</p>
+                    <Image className={`w-auto rounded-md p-2 h-12 m-auto transition-all hover:scale-105 z-10 drop-shadow-teal ${el2==2 ? "w-32" : ''}`} src={`/images/cp_profiles/${el2}.png`} alt="cp-profile" width={isDesktopOrLaptop ? 100 : 40} height={isDesktopOrLaptop ? 20 : 10} /> 
+                  </a>
                 ))}
               </div>
             </section>
