@@ -46,11 +46,11 @@ function Experience() {
                 >
                     <div className="vertical-timeline-element-title font-bold mt-2 mb-2">Competitive Programmar</div>
                     <div className='mt-2'>
-                        1. Solved 700+ problems on <a href='https://leetcode.com/aditya3435/' target='_blank' className='text-teal'>Leetcode</a>
+                        1. Solved 900+ problems on and having Knight Level <a href='https://leetcode.com/aditya3435/' target='_blank' className='text-teal'>Leetcode</a>
                         <br />
-                        2. 3 star coder on <a href='https://codechef.com/users/aditya3435' target='_blank' className='text-teal'>Codechef</a> (max. rating 1701)
+                        3. Specialist at <a href='https://codeforces.com/profile/aditya3435' target='_blank' className='text-teal'>Codeforces</a> (max. rating 1401)
                         <br /> 
-                        3. Pupil at <a href='https://codeforces.com/profile/aditya3435' target='_blank' className='text-teal'>Codeforces</a> (max. rating 1338)
+                        2. 3 star coder on <a href='https://codechef.com/users/aditya3435' target='_blank' className='text-teal'>Codechef</a> (max. rating 1701)
                     </div>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement

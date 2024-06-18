@@ -11,30 +11,30 @@ function Projects() {
   const contentData = [
     {
       id: "0",
+      title: "Nimbus Technical Fest Website",
+      description:
+      "This college technical fest website, developed using React.js, SASS, Canvajs, ThreeJs, and pnpm packages, boasts an engaging design featuring captivating animations across six distinct pages. Each page is thoughtfully crafted with a unique layout style, contributing to an immersive and visually appealing user experience.",
+      img: "nimbus",
+      link: "https://nimbus-2023.onrender.com/",
+      gitubLink: 'https://github.com/pixonoids/Nimbus-2k23'
+    },
+    {
+      id: "1",
+      title: "Hillffair Cultural Fest Website",
+      description:
+      "Made this cultural fest website with my team using Reactjs showcasing NIT hamirpur cultural fest thoroughly.",
+      img: "hillffair",
+      link: "http://hillffair2k23.netlify.app/",
+      gitubLink: 'https://github.com/pixonoids/Hillfair-2022-Mirage'
+    },
+    {
+      id: "2",
       title: "Attendance system using face recognition",
       description:
         "This project utilizes openCV's face recognition model to create an advanced attendance system. It captures user photos, automatically updating attendance records in a spreadsheet. With a user-friendly interface, emphasis on security, and continuous improvement, it offers a reliable and efficient solution for organizations seeking streamlined attendance tracking.",
       img: "opencv",
       link: "https://github.com/Aditya3435/Attendance-System-using-Face-Recognition",
       gitubLink: 'https://github.com/Aditya3435/Attendance-System-using-Face-Recognition'
-    },
-    {
-      id: "1",
-      title: "Nimbus Technical Fest Website",
-      description:
-      "This college technical fest website, developed using React.js, SASS, Canvajs, ThreeJs, and pnpm packages, boasts an engaging design featuring captivating animations across six distinct pages. Each page is thoughtfully crafted with a unique layout style, contributing to an immersive and visually appealing user experience.",
-      img: "nimbus",
-      link: "https://festnimbus.nith.ac.in/",
-      gitubLink: 'https://github.com/pixonoids/Nimbus-2k23'
-    },
-    {
-      id: "2",
-      title: "Hillffair Cultural Fest Website",
-      description:
-      "Made this cultural fest website with my team using Reactjs showcasing NIT hamirpur cultural fest thoroughly.",
-      img: "hillffair",
-      link: "https://www.hillffairnith.com/",
-      gitubLink: 'https://github.com/pixonoids/Hillfair-2022-Mirage'
     },
     {
       id: "3",
