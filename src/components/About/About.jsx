@@ -14,11 +14,11 @@ export default function About() {
     {
       "Title": [
         {
-          "text": "Pupil",
-          "color": "text-green-500"
+          "text": "Specialist",
+          "color": "text-cyan-500"
         },
         {
-          "text": " at Codeforces (max. Rating 1338)"
+          "text": " at Codeforces (max. Rating 1401)"
         }
       ]
     },
@@ -36,11 +36,11 @@ export default function About() {
     {
       "Title": [
         {
-          "text": "Leetcode",
+          "text": "Knight at Leetcode",
           "color": "text-orange-500"
         },
         {
-          "text": " (max. Rating 1698)"
+          "text": " (max. Rating 1864)"
         }
       ]
     }
