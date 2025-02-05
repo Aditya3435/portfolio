@@ -29,12 +29,12 @@ function Projects() {
     },
     {
       id: "2",
-      title: "Attendance system using face recognition",
+      title: "SecretChat",
       description:
-        "This project utilizes openCV's face recognition model to create an advanced attendance system. It captures user photos, automatically updating attendance records in a spreadsheet. With a user-friendly interface, emphasis on security, and continuous improvement, it offers a reliable and efficient solution for organizations seeking streamlined attendance tracking.",
-      img: "opencv",
-      link: "https://github.com/Aditya3435/Attendance-System-using-Face-Recognition",
-      gitubLink: 'https://github.com/Aditya3435/Attendance-System-using-Face-Recognition'
+        "SecretChat is a MERN (MongoDB, Express, React, Node.js) stack application that allows users to send and receive anonymous feedback and honest messages from friends.",
+      img: "secretchat",
+      link: "https://secretchat-w193.onrender.com/",
+      gitubLink: 'https://github.com/Aditya3435/SecretChat'
     },
     {
       id: "3",
@@ -53,6 +53,15 @@ function Projects() {
       img: "password",
       link: "https://github.com/Aditya3435/generate_password_using_terminal",
       gitubLink: 'https://github.com/Aditya3435/pomodoro-app'
+    },
+    {
+      id: "5",
+      title: "Pomodoro timer on Terminal",
+      description:
+      "A terminal-based Pomodoro Timer that helps you stay focused and productive. This timer features multiple session options, progress updates, break suggestions, and a daily focus report.",
+      img: "pomo",
+      link: "https://github.com/Aditya3435/pomodoro-terminal",
+      gitubLink: 'https://github.com/Aditya3435/pomodoro-terminal'
     },
 
     // change desktopPhotos class bottom 77% to more if increase project
