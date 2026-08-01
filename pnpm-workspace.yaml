@@ -1,0 +1,3 @@
+allowBuilds:
+  protobufjs: false
+  react-vertical-timeline-component: false

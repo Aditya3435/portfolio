@@ -8,13 +8,13 @@
   font-weight: 300;
 }
 
-@media (prefers-color-scheme: dark) {
+// @media (prefers-color-scheme: light) {
   :root {
     --dark: #1c1c1c;
     --light: #c4c4c4;
     --teal: #008080;
   }
-}
+// }
 
 :root {
   --background-end-rgb: #0C0D0F;

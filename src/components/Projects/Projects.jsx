@@ -13,19 +13,19 @@ function Projects() {
       id: "0",
       title: "Nimbus Technical Fest Website",
       description:
-      "This college technical fest website, developed using React.js, SASS, Canvajs, ThreeJs, and pnpm packages, boasts an engaging design featuring captivating animations across six distinct pages. Each page is thoughtfully crafted with a unique layout style, contributing to an immersive and visually appealing user experience.",
+        "This college technical fest website, developed using React.js, SASS, Canvajs, ThreeJs, and pnpm packages, boasts an engaging design featuring captivating animations across six distinct pages. Each page is thoughtfully crafted with a unique layout style, contributing to an immersive and visually appealing user experience.",
       img: "nimbus",
       link: "https://nimbus-2023.onrender.com/",
-      gitubLink: 'https://github.com/pixonoids/Nimbus-2k23'
+      gitubLink: "https://github.com/pixonoids/Nimbus-2k23",
     },
     {
       id: "1",
       title: "Hillffair Cultural Fest Website",
       description:
-      "Made this cultural fest website with my team using Reactjs showcasing NIT hamirpur cultural fest thoroughly.",
+        "Made this cultural fest website with my team using Reactjs showcasing NIT hamirpur cultural fest thoroughly.",
       img: "hillffair",
       link: "http://hillffair2k23.netlify.app/",
-      gitubLink: 'https://github.com/pixonoids/Hillfair-2022-Mirage'
+      gitubLink: "https://github.com/pixonoids/Hillfair-2022-Mirage",
     },
     {
       id: "2",
@@ -34,34 +34,34 @@ function Projects() {
         "SecretChat is a MERN (MongoDB, Express, React, Node.js) stack application that allows users to send and receive anonymous feedback and honest messages from friends.",
       img: "secretchat",
       link: "https://secretchat-w193.onrender.com/",
-      gitubLink: 'https://github.com/Aditya3435/SecretChat'
+      gitubLink: "https://github.com/Aditya3435/SecretChat",
     },
     {
       id: "3",
       title: "Pomodoro Web App",
       description:
-      "To enhance productivity, I developed a Pomodoro timer web app using HTML, CSS, and JavaScript. The app offers the flexibility of setting time manually or using default settings, catering to individual preferences. Additionally, it provides three distinct color themes to optimize the user experience, making it a versatile and visually appealing tool for efficient time management.",
+        "To enhance productivity, I developed a Pomodoro timer web app using HTML, CSS, and JavaScript. The app offers the flexibility of setting time manually or using default settings, catering to individual preferences. Additionally, it provides three distinct color themes to optimize the user experience, making it a versatile and visually appealing tool for efficient time management.",
       img: "pomodoro",
       link: "https://aditya3435.github.io/pomodoro-app/",
-      gitubLink: 'https://github.com/Aditya3435/pomodoro-app'
+      gitubLink: "https://github.com/Aditya3435/pomodoro-app",
     },
     {
       id: "4",
       title: "Password Generator using Terminal",
       description:
-      "Scripted a password generator for the terminal using a Bash script, ensuring ease of use, and 100% secure random password by providing clear instructions in a well-documented README, guiding users through the installation and usage of the script.",
+        "Scripted a password generator for the terminal using a Bash script, ensuring ease of use, and 100% secure random password by providing clear instructions in a well-documented README, guiding users through the installation and usage of the script.",
       img: "password",
       link: "https://github.com/Aditya3435/generate_password_using_terminal",
-      gitubLink: 'https://github.com/Aditya3435/pomodoro-app'
+      gitubLink: "https://github.com/Aditya3435/pomodoro-app",
     },
     {
       id: "5",
       title: "Pomodoro timer on Terminal",
       description:
-      "A terminal-based Pomodoro Timer that helps you stay focused and productive. This timer features multiple session options, progress updates, break suggestions, and a daily focus report.",
+        "A terminal-based Pomodoro Timer that helps you stay focused and productive. This timer features multiple session options, progress updates, break suggestions, and a daily focus report.",
       img: "pomo",
       link: "https://github.com/Aditya3435/pomodoro-terminal",
-      gitubLink: 'https://github.com/Aditya3435/pomodoro-terminal'
+      gitubLink: "https://github.com/Aditya3435/pomodoro-terminal",
     },
 
     // change desktopPhotos class bottom 77% to more if increase project
@@ -78,23 +78,24 @@ function Projects() {
   useEffect(() => {
     const desktopPhotosElement = document.querySelector(".desktopPhotos");
     const projectsCount = Object.keys(refsAndViews).length;
-    document.querySelector(":root").style.setProperty('--projectcount', projectsCount);
-  
+    document
+      .querySelector(":root")
+      .style.setProperty("--projectcount", projectsCount);
+
     // Combine the 'view' values of all refs except the first and last
     const inview = Object.values(refsAndViews)
       .slice(1, -1) // Exclude the first and last elements
       .reduce((accumulator, { view }) => accumulator || view, false);
-  
+
     const { view: view0 } = refsAndViews["0"];
-  
+
     desktopPhotosElement.classList.toggle("right-fixed", inview);
-    desktopPhotosElement.classList.toggle("right-relative", (!inview && view0));
+    desktopPhotosElement.classList.toggle("right-relative", !inview && view0);
   }, [refsAndViews]);
-  
 
   useEffect(() => {
     const details = gsap.utils.toArray(
-      ".desktopContentSection:not(:first-child)"
+      ".desktopContentSection:not(:first-child)",
     );
     const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)");
 
@@ -125,9 +126,8 @@ function Projects() {
     });
   }, []);
 
-  
   return (
-    <div className="mt-20" id="projects">
+    <div className="" id="projects">
       <div
         className=" text-7xl m-auto w-full flex justify-center font-bold first-letter:text-teal  max-sm:text-4xl"
         data-aos="fade-up"
@@ -146,7 +146,14 @@ function Projects() {
               >
                 <h1>{item.title}</h1>
                 <p>{item.description}</p>
-                <a href={item.gitubLink} target="_blank" className="text-teal md:text-2xl md:mt-4"> - Github Link</a>
+                <a
+                  href={item.gitubLink}
+                  target="_blank"
+                  className="text-teal md:text-2xl md:mt-4"
+                >
+                  {" "}
+                  - Github Link
+                </a>
               </div>
             ))}
           </div>
@@ -155,11 +162,27 @@ function Projects() {
         <div className="right">
           <div className="mobileContent">
             {contentData.map((item) => (
-              <div className={`mobilePhoto`} key={item.id} data-aos='fade-up'>
-                <h1 className="first-letter:text-xl"data-aos='fade-up'>{item.title}</h1>
-                <a href={item.link} target="_blank"><Image src={`/images/projects/${item.img}.png`} alt='project-photo' width={150} height={150}/></a>
-                <p data-aos='fade-up'>{item.description}</p>
-                <a href={item.gitubLink} target="_blank" className="text-teal md:text-2xl md:mt-4"> - GitHub Link</a>
+              <div className={`mobilePhoto`} key={item.id} data-aos="fade-up">
+                <h1 className="first-letter:text-xl" data-aos="fade-up">
+                  {item.title}
+                </h1>
+                <a href={item.link} target="_blank">
+                  <Image
+                    src={`/images/projects/${item.img}.png`}
+                    alt="project-photo"
+                    width={150}
+                    height={150}
+                  />
+                </a>
+                <p data-aos="fade-up">{item.description}</p>
+                <a
+                  href={item.gitubLink}
+                  target="_blank"
+                  className="text-teal md:text-2xl md:mt-4"
+                >
+                  {" "}
+                  - GitHub Link
+                </a>
               </div>
             ))}
           </div>
@@ -171,8 +194,7 @@ function Projects() {
                 target="_blank"
                 href={item.link}
                 key={item.id}
-              >
-              </a>
+              ></a>
             ))}
           </div>
         </div>
